@@ -71,7 +71,7 @@ class AppLayout extends Component {
     console.log('menuCollapsed ', menuCollapsed);
 
     return (
-      <Container>
+      <Container fluid>
         <Row className="app-root-layout">
           <Col className={`app-menu-container ${menuCollapsed ? 'app-menu-container-collapsed' : ''}`} >
             <Menu {...{ collapsed: menuCollapsed }}/>
