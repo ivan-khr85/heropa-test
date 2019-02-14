@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import T from 'prop-types';
+import { Container, Row, Col } from 'reactstrap';
 
-const AppLayout = ({ children }) => (
-  <>
-    <h3>App Layout</h3>
-    {children}
-  </>
-);
+class AppLayout extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+
+  render() {
+
+    return (
+      <Container>
+        <Row>
+          <Col>
+
+
+          </Col>
+          <Col>
+            {children}
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
 
 AppLayout.propTypes = {
   children: T.oneOfType([T.element, T.arrayOf(T.element)]).isRequired,
