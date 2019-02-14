@@ -1,1 +1,1 @@
-// export layouts from this file
+export { default as AppLayout } from './AppLayout';
