@@ -57,9 +57,7 @@ class AppLayout extends Component {
 
   //============================================================================================
 
-  toggleMenu = () => {
-    console.log('toggleMenu fn call');
-  };
+  toggleMenu = (menuCollapsed) => this.setState({ menuCollapsed });
 
   render() {
     const {

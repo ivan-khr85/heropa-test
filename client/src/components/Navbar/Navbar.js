@@ -9,21 +9,41 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Button,
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt, faBell, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
+import {
+  faSignOutAlt,
+  faBell,
+  faGlobeAmericas,
+  faChevronLeft,
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons'
 
 import './navbar.scss';
 
 class NavbarComponent extends Component {
-  constructor(props) {
-    super(props);
+  shouldComponentUpdate(nextProps) {
+    return nextProps.menuCollapsed !== this.props.menuCollapsed;
   }
 
-  render() {
-    return(
+  onToggleClick = () => {
+    const { menuCollapsed, toggleMenu  } = this.props;
+    toggleMenu(!menuCollapsed);
+  };
 
+  render() {
+    const {
+      props: { menuCollapsed },
+      onToggleClick,
+    } = this;
+
+    return(
         <Navbar className="app-navbar">
+          <Button size="sm" className="app-toggle-menu-btn" onClick={onToggleClick}>
+            <FontAwesomeIcon icon={menuCollapsed ? faChevronRight : faChevronLeft} />
+          </Button>
+
           <Nav className="ml-auto app-nav" navbar>
             <NavItem><FontAwesomeIcon icon={faGlobeAmericas} /></NavItem>
             <UncontrolledDropdown nav className="app-lang-selector">
