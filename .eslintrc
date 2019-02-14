@@ -12,7 +12,8 @@
     "camelcase": "off",
     "react/require-default-props": "off",
     "import/prefer-default-export": "off",
-    "no-confusing-arrow": "off"
+    "no-confusing-arrow": "off",
+    "max-len": ["error", { "code": 120 }]
   },
   "env": {
     "node": true,

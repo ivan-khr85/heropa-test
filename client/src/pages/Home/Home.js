@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
+import { TableComponent } from '../../components';
 
 class Home extends Component {
   constructor(props) {
@@ -7,12 +8,10 @@ class Home extends Component {
   }
 
   render() {
-    return (<h3>Home page base</h3>);
+    return <TableComponent />;
   }
 }
 
-Home.propTypes = {
-
-};
+Home.propTypes = {};
 
 export default Home;
