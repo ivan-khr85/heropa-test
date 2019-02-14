@@ -76,10 +76,11 @@ class AppLayout extends Component {
           <Col className={`app-menu-container ${menuCollapsed ? 'app-menu-container-collapsed' : ''}`} >
             <Menu {...{ collapsed: menuCollapsed }}/>
           </Col>
-          <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`} >
+          <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`}>
             <Row>
               <Navbar {...{ menuCollapsed, toggleMenu }}/>
             </Row>
+
             <Row>
               {children}
             </Row>
