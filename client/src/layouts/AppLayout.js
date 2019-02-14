@@ -9,6 +9,7 @@ class AppLayout extends Component {
 
 
   render() {
+    const { children } = this.props;
 
     return (
       <Container>
