@@ -7,6 +7,8 @@
     position: absolute;
     height: 100vh;
 
+    transition: width 0.5s;
+
     &.app-menu-container-collapsed {
       width: 50px;
     }
@@ -14,9 +16,12 @@
 
   .app-layout-container {
 
-    background-color: green;
+
 
     margin-left: 250px;
+    padding: 15px;
+
+    transition: width 0.5s;
 
     &.app-layout-container-collapsed {
       margin-left: 50px;

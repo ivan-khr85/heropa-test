@@ -3,6 +3,8 @@ import T from 'prop-types';
 import * as R from 'ramda';
 import { Container, Row, Col } from 'reactstrap';
 
+import Menu from '../../components/Menu';
+import Navbar from '../../components/Navbar';
 import { collapseMenuScreenWidth } from './config';
 
 import './appLayout.scss';
@@ -55,10 +57,15 @@ class AppLayout extends Component {
 
   //============================================================================================
 
+  toggleMenu = () => {
+    console.log('toggleMenu fn call');
+  };
+
   render() {
     const {
       props: { children },
       state: { menuCollapsed },
+      toggleMenu,
     } = this;
 
     console.log('menuCollapsed ', menuCollapsed);
@@ -67,11 +74,15 @@ class AppLayout extends Component {
       <Container>
         <Row className="app-root-layout">
           <Col className={`app-menu-container ${menuCollapsed ? 'app-menu-container-collapsed' : ''}`} >
-
-
+            <Menu {...{ collapsed: menuCollapsed }}/>
           </Col>
           <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`} >
-            {children}
+            <Row>
+              <Navbar {...{ menuCollapsed, toggleMenu }}/>
+            </Row>
+            <Row>
+              {children}
+            </Row>
           </Col>
         </Row>
       </Container>
