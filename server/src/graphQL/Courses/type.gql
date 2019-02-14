@@ -1,0 +1,10 @@
+type Course {
+  _id: ID!
+  lcoation: String
+  imageID: String
+  type: String
+  VLUs: String
+  vilibility: String
+  createdAt: Int
+  status: String
+}
