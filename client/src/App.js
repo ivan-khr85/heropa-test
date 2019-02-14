@@ -7,7 +7,7 @@ import Routes from './routes';
 export default () => (
   <Router>
     <AppLayout>
-      <Routes/>
+      <Routes />
     </AppLayout>
   </Router>
 );
