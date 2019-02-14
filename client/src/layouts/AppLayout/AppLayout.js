@@ -5,6 +5,8 @@ import { Container, Row, Col } from 'reactstrap';
 
 import { collapseMenuScreenWidth } from './config';
 
+import './appLayout.scss';
+
 class AppLayout extends Component {
   constructor(props) {
     super(props);
@@ -63,12 +65,12 @@ class AppLayout extends Component {
 
     return (
       <Container>
-        <Row>
-          <Col>
+        <Row className="app-root-layout">
+          <Col className={`app-menu-container ${menuCollapsed ? 'app-menu-container-collapsed' : ''}`} >
 
 
           </Col>
-          <Col>
+          <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`} >
             {children}
           </Col>
         </Row>

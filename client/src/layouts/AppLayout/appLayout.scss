@@ -1,0 +1,25 @@
+.app-root-layout {
+  .app-menu-container {
+
+    background-color: red;
+
+    width: 250px;
+    position: absolute;
+    height: 100vh;
+
+    &.app-menu-container-collapsed {
+      width: 50px;
+    }
+  }
+
+  .app-layout-container {
+
+    background-color: green;
+
+    margin-left: 250px;
+
+    &.app-layout-container-collapsed {
+      margin-left: 50px;
+    }
+  }
+}
