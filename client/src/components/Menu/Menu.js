@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
+import { Container, Row, Col } from 'reactstrap';
 
+import { UserSection } from './components';
 import './menu.scss';
 
-import { Container, Row, Col } from 'reactstrap';
+
 
 class Menu extends Component {
   constructor(props) {
@@ -18,7 +20,9 @@ class Menu extends Component {
 
     return (
       <Col className={`app-menu-container ${collapsed ? 'app-menu-container-collapsed' : ''}`}>
-        <h3>Menu component</h3>
+        <UserSection userName="Firstname Lastname" collapsed={collapsed} />
+
+
       </Col>
     );
   }
