@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  findColumnsByName, renderRowItem,,
-} from './helpers';
-import { types } from './const';
+import { findColumnsByName, renderRowItem } from './helpers';
 
 export const renderHeader = columns => columns.map(({ name }) => <th key={name}>{name}</th>);
 
