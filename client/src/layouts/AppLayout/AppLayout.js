@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
-import * as R from 'ramda';
 import { Container, Row, Col } from 'reactstrap';
 
 import Menu from '../../components/Menu';
@@ -16,37 +15,8 @@ class AppLayout extends Component {
 
     this.state = {
       menuCollapsed: innerWidth <= collapseMenuScreenWidth,
-      currentWidth: innerWidth,
     };
   }
-
-  // !!! menu collapsing logic should be moved to a menu component with using callback
-  //= ===========================================================================================
-
-  componentDidMount() {
-    window.addEventListener('resize', this.onWindowResize);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize);
-  }
-
-  onWindowResize = ({ target: { innerWidth } }) => {
-    const { currentWidth } = this.state;
-    const stateUpdates = { currentWidth: innerWidth };
-
-    if (currentWidth > collapseMenuScreenWidth && innerWidth <= collapseMenuScreenWidth) {
-      Object.assign(stateUpdates, { menuCollapsed: true });
-    }
-
-    if (currentWidth <= collapseMenuScreenWidth && innerWidth > collapseMenuScreenWidth) {
-      Object.assign(stateUpdates, { menuCollapsed: false });
-    }
-
-    this.setState(stateUpdates);
-  };
-
-  //= ===========================================================================================
 
   toggleMenu = menuCollapsed => this.setState({ menuCollapsed });
 
@@ -60,9 +30,7 @@ class AppLayout extends Component {
     return (
       <Container fluid className="app-root-container">
         <Row className="app-root-layout">
-
-          <Menu {...{ collapsed: menuCollapsed }} />
-
+          <Menu {...{ collapsed: menuCollapsed, collapseMenuScreenWidth, toggleMenu }} />
           <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`}>
             <Row>
               <Navbar {...{ menuCollapsed, toggleMenu }} />

@@ -9,7 +9,42 @@ import './menu.scss';
 class Menu extends Component {
   constructor(props) {
     super(props);
+    const { innerWidth } = window;
+
+    this.state = {
+      currentWidth: innerWidth,
+    };
   }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onWindowResize);
+  }
+
+  shouldComponentUpdate({ collapsed: nextCollapsed }) {
+    const { collapsed } = this.props;
+    return nextCollapsed !== collapsed;
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowResize);
+  }
+
+  onWindowResize = ({ target: { innerWidth } }) => {
+    const {
+      props: { collapseMenuScreenWidth, toggleMenu },
+      state: { currentWidth },
+    } = this;
+
+    if (currentWidth > collapseMenuScreenWidth && innerWidth <= collapseMenuScreenWidth) {
+      toggleMenu(true);
+    }
+
+    if (currentWidth <= collapseMenuScreenWidth && innerWidth > collapseMenuScreenWidth) {
+      toggleMenu(false);
+    }
+
+    this.setState({ currentWidth: innerWidth });
+  };
 
   render() {
     const {
@@ -77,6 +112,8 @@ class Menu extends Component {
 
 Menu.propTypes = {
   collapsed: T.bool.isRequired,
+  collapseMenuScreenWidth: T.number.isRequired,
+  toggleMenu: T.func.isRequired,
 };
 
 export default Menu;
