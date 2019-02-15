@@ -46,25 +46,25 @@ class NavbarComponent extends Component {
         </Button>
 
         <Nav className="ml-auto app-nav" navbar>
-          <NavItem><FontAwesomeIcon icon={faGlobeAmericas} /></NavItem>
+          <NavItem>
+            <FontAwesomeIcon icon={faGlobeAmericas} />
+          </NavItem>
           <UncontrolledDropdown nav className="app-lang-selector">
             <DropdownToggle nav caret>
               English
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem>
-                English
-              </DropdownItem>
-              <DropdownItem>
-                French
-              </DropdownItem>
-              <DropdownItem>
-                Spanish
-              </DropdownItem>
+              <DropdownItem>English</DropdownItem>
+              <DropdownItem>French</DropdownItem>
+              <DropdownItem>Spanish</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
-          <NavItem><FontAwesomeIcon icon={faBell} /></NavItem>
-          <NavItem><FontAwesomeIcon icon={faSignOutAlt} /> Log out</NavItem>
+          <NavItem>
+            <FontAwesomeIcon icon={faBell} />
+          </NavItem>
+          <NavItem>
+            <FontAwesomeIcon icon={faSignOutAlt} /> Log out
+          </NavItem>
         </Nav>
       </Navbar>
     );
