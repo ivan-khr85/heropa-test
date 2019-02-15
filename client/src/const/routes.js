@@ -1,4 +1,4 @@
 export default {
   HOME: '/',
-  SHOW_COURSES: '/showcourses',
-}
+  SHOW_COURSES: '/show-courses',
+};
