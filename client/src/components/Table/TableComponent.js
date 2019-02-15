@@ -1,17 +1,39 @@
 import React from 'react';
 import T from 'prop-types';
-import { Table } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBars, faCogs, faFilter, faFileAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { renderHeader, renderData } from './utils';
 import './index.scss';
+import colors from '../../const/colors';
+import { iconSize } from './const';
 
 const TableComponent = ({ columns, data }) => (
-  <Table className="table-component">
-    <thead>
-      <tr>{renderHeader(columns)}</tr>
-    </thead>
-    <tbody>{renderData(data, columns)}</tbody>
-  </Table>
+  <div className="table-component">
+    <div className="filter">
+      <Button className="button-filter">
+        <FontAwesomeIcon size={iconSize} icon={faBars} color={colors.table.inactiveIcon} />
+      </Button>
+      <Button className="button-filter">
+        <FontAwesomeIcon size={iconSize} icon={faCogs} color={colors.table.inactiveIcon} />
+      </Button>
+      <Button className="button-filter">
+        <FontAwesomeIcon size={iconSize} icon={faFilter} color={colors.table.inactiveIcon} />
+      </Button>
+      <Button className="button-filter">
+        <FontAwesomeIcon size={iconSize} icon={faFileAlt} color={colors.table.inactiveIcon} />
+      </Button>
+    </div>
+    <Table responsive>
+      <thead>
+        <tr>{renderHeader(columns)}</tr>
+      </thead>
+      <tbody>{renderData(data, columns)}</tbody>
+    </Table>
+  </div>
 );
 
 TableComponent.propTypes = {

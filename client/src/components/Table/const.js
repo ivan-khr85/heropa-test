@@ -18,4 +18,7 @@ export const types = {
   DATE: Date,
   LABEL: 'Label',
   STRING: String,
+  NUMBER: Number,
 };
+
+export const iconSize = 'lg';

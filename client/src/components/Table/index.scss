@@ -1,7 +1,28 @@
 @import "../../styles/colors.scss";
 
 .table-component {
+  width: 100%;
+
   .first-column {
     color: $primaryColor;
+  }
+  .filter {
+    display: flex;
+
+    .button-filter {
+      outline: none;
+      padding: 5px 6.5px;
+      border: none;
+      margin: 5px 10px;
+      background-color: transparent;
+      &:focus {
+        box-shadow: none !important;
+      }
+      &:active {
+        box-shadow: none !important;
+        border-color: transparent;
+        background-color: rgba($color: #ccc, $alpha: .4)
+      }
+    }
   }
 }
