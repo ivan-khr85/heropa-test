@@ -57,8 +57,6 @@ class AppLayout extends Component {
       toggleMenu,
     } = this;
 
-    console.log('menuCollapsed ', menuCollapsed);
-
     return (
       <Container fluid className="app-root-container">
         <Row className="app-root-layout">
