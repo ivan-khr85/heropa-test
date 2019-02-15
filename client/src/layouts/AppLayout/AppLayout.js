@@ -30,7 +30,7 @@ class AppLayout extends Component {
   }
 
   // !!! menu collapsing logic should be moved to a menu component with using callback
-  //============================================================================================
+  //= ===========================================================================================
 
   componentDidMount() {
     window.addEventListener('resize', this.onWindowResize);
@@ -55,11 +55,9 @@ class AppLayout extends Component {
     this.setState(stateUpdates);
   };
 
-  //============================================================================================
+  //= ===========================================================================================
 
-  toggleMenu = () => {
-    console.log('toggleMenu fn call');
-  };
+  toggleMenu = menuCollapsed => this.setState({ menuCollapsed });
 
   render() {
     const {
@@ -71,15 +69,16 @@ class AppLayout extends Component {
     console.log('menuCollapsed ', menuCollapsed);
 
     return (
-      <Container fluid>
+      <Container fluid className="app-root-container">
         <Row className="app-root-layout">
-          <Col className={`app-menu-container ${menuCollapsed ? 'app-menu-container-collapsed' : ''}`} >
-            <Menu {...{ collapsed: menuCollapsed }}/>
-          </Col>
-          <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`} >
+
+          <Menu {...{ collapsed: menuCollapsed }} />
+
+          <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`}>
             <Row>
-              <Navbar {...{ menuCollapsed, toggleMenu }}/>
+              <Navbar {...{ menuCollapsed, toggleMenu }} />
             </Row>
+
             <Row>
               {children}
             </Row>

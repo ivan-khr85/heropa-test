@@ -1,0 +1,36 @@
+@import "../../styles/colors";
+
+.app-navbar {
+  background-color: $lightGray;
+  width: 100%;
+  height: 65px;
+
+  .app-nav {
+    display: flex;
+    flex-direction: row;
+    color: $darkGray;
+
+    li {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .app-lang-selector {
+      padding: 0 10px 0 0;
+
+      a {
+        color: $darkGray;
+      }
+    }
+  }
+
+  .app-toggle-menu-btn {
+    background-color: $primaryColor;
+    border: none;
+    outline: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
