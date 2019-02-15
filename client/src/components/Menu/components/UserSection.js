@@ -11,7 +11,6 @@ import {
 import { getReducedUserName } from './utils';
 import './userSection.scss';
 
-
 const UserSection = ({ userName, collapsed }) => (
   <Row>
     {collapsed
