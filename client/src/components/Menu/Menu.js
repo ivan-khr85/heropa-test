@@ -21,19 +21,45 @@ class Menu extends Component {
         label: 'Dashboards',
         iconKey: 'faThLarge',
         href: '/dashboard',
-        subitems: [],
       },
-
+      {
+        label: 'Environments',
+        iconKey: 'faSitemap',
+        href: '/environments',
+      },
+      {
+        label: 'Templates',
+        iconKey: 'faColumns',
+        href: '/templates',
+      },
+      {
+        label: 'Polices',
+        iconKey: 'faFileAlt',
+        href: '/polices',
+      },
+      {
+        label: 'Courses',
+        iconKey: 'faPuzzlePiece',
+        href: '/courses',
+      },
+      {
+        label: 'Reports',
+        iconKey: 'faCogs',
+        href: '/reports',
+      },
+      {
+        label: 'Administration',
+        iconKey: 'faLandmark',
+        href: '/administration',
+      },
     ];
-
-
 
     return (
       <Col className={`app-menu-container ${collapsed ? 'app-menu-container-collapsed' : ''}`}>
         <UserSection userName="Firstname Lastname" collapsed={collapsed} />
 
         <div className="app-menu-items-container">
-          <MenuItem {...{ data: menuItemData[0], collapsed }} />
+          {menuItemData.map(data => <MenuItem {...{ key: data.label, data, collapsed }} />)}
         </div>
 
       </Col>
