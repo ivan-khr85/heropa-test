@@ -8,7 +8,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
-import { getReducedUserName } from '../utils';
+import { getReducedUserName } from '../../utils';
 import './userSection.scss';
 
 const UserSection = ({ userName, collapsed }) => (
