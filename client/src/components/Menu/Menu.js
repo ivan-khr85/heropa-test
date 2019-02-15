@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
-import { Container, Row, Col } from 'reactstrap';
+import { Col } from 'reactstrap';
 
-import { UserSection } from './components';
+import { UserSection, MenuItem } from './components';
 import './menu.scss';
+
 
 class Menu extends Component {
   constructor(props) {
@@ -15,9 +16,26 @@ class Menu extends Component {
       props: { collapsed },
     } = this;
 
+    const menuItemData = [
+      {
+        label: 'Dashboards',
+        iconKey: 'faThLarge',
+        href: '/dashboard',
+        subitems: [],
+      },
+
+    ];
+
+
+
     return (
       <Col className={`app-menu-container ${collapsed ? 'app-menu-container-collapsed' : ''}`}>
         <UserSection userName="Firstname Lastname" collapsed={collapsed} />
+
+        <div className="app-menu-items-container">
+          <MenuItem {...{ data: menuItemData[0], collapsed }} />
+        </div>
+
       </Col>
     );
   }
