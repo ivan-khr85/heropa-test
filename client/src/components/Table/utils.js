@@ -1,17 +1,13 @@
 import React from 'react';
-import { findColumnsByName, renderDateCel } from './helpers';
-
-const renderTextCel = value => <td key={value}>{`${value}`}</td>;
+import { findColumnsByName, renderRowItem } from './helpers';
 
 export const renderHeader = columns => columns.map(({ name }) => <th key={name}>{name}</th>);
 
 export const renderRow = (row, columns, key) => (
   <tr key={key}>
-    {row.map(({ column, value }) => {
+    {row.map(({ column, value }, index) => {
       const { type = '', format = '' } = findColumnsByName(column, columns) || {};
-
-      if (type === Date) return renderDateCel(value, format);
-      return renderTextCel(value);
+      return renderRowItem(type, value, format, index);
     })}
   </tr>
 );
