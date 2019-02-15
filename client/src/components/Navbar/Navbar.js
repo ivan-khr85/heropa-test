@@ -38,34 +38,34 @@ class NavbarComponent extends Component {
       onToggleClick,
     } = this;
 
-    return(
-        <Navbar className="app-navbar">
-          <Button size="sm" className="app-toggle-menu-btn" onClick={onToggleClick}>
-            <FontAwesomeIcon icon={menuCollapsed ? faChevronRight : faChevronLeft} />
-          </Button>
+    return (
+      <Navbar className="app-navbar">
+        <Button size="sm" className="app-toggle-menu-btn" onClick={onToggleClick}>
+          <FontAwesomeIcon icon={menuCollapsed ? faChevronRight : faChevronLeft} />
+        </Button>
 
-          <Nav className="ml-auto app-nav" navbar>
-            <NavItem><FontAwesomeIcon icon={faGlobeAmericas} /></NavItem>
-            <UncontrolledDropdown nav className="app-lang-selector">
-              <DropdownToggle nav caret>
+        <Nav className="ml-auto app-nav" navbar>
+          <NavItem><FontAwesomeIcon icon={faGlobeAmericas} /></NavItem>
+          <UncontrolledDropdown nav className="app-lang-selector">
+            <DropdownToggle nav caret>
+              English
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>
                 English
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  English
-                </DropdownItem>
-                <DropdownItem>
-                  French
-                </DropdownItem>
-                <DropdownItem>
-                  Spanish
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <NavItem><FontAwesomeIcon icon={faBell} /></NavItem>
-            <NavItem><FontAwesomeIcon icon={faSignOutAlt} /> Log out</NavItem>
-          </Nav>
-        </Navbar>
+              </DropdownItem>
+              <DropdownItem>
+                French
+              </DropdownItem>
+              <DropdownItem>
+                Spanish
+              </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+          <NavItem><FontAwesomeIcon icon={faBell} /></NavItem>
+          <NavItem><FontAwesomeIcon icon={faSignOutAlt} /> Log out</NavItem>
+        </Nav>
+      </Navbar>
     );
   }
 }

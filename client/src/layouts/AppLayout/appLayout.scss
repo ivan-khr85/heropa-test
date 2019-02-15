@@ -1,14 +1,4 @@
 .app-root-layout {
-  .app-menu-container {
-    width: 250px;
-    position: absolute;
-    height: 100vh;
-    //transition: width 0.5s;
-    &.app-menu-container-collapsed {
-      width: 50px;
-    }
-  }
-
   .app-layout-container {
     margin-left: 250px;
     //transition: margin 0.5s;
