@@ -27,6 +27,12 @@
   .app-chevron-icon-container {
     margin-left: auto;
   }
+
+  &.app-menu-item-container-collapsed {
+    .app-menu-item-label {
+      display: none;
+    }
+  }
 }
 
 .app-submenus-container {

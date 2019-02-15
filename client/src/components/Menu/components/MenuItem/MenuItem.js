@@ -30,25 +30,28 @@ class MenuItem extends Component {
 
   toggleItemExpanded = menuItemExpanded => this.setState({ menuItemExpanded });
 
-  renderExpandedMenuItem = (iconKey, label, subItems) => {
+  renderMenuItem = ({
+    collapsed, iconKey, label, subItems,
+  }) => {
     const { menuItemExpanded } = this.state;
     const { toggleItemExpanded } = this;
-    const hasSubItems = subItems.length;
+    const showSubItemsComponents = subItems.length && !collapsed;
+
 
     return (
       <div>
         <div
-          className="app-menu-item-container"
+          className={`app-menu-item-container ${collapsed ? 'app-menu-item-container-collapsed' : ''} `}
           role="button"
           tabIndex="0"
-          onClick={() => hasSubItems && toggleItemExpanded(!menuItemExpanded)}
+          onClick={() => showSubItemsComponents && toggleItemExpanded(!menuItemExpanded)}
           onKeyPress={() => {}}
         >
           <div className="app-menu-tem-icon-container">
             <FontAwesomeIcon icon={icons[iconKey]} />
           </div>
           <span className="app-menu-item-label">{label}</span>
-          { hasSubItems
+          { showSubItemsComponents
             ? (
               <div className="app-chevron-icon-container">
                 <FontAwesomeIcon icon={menuItemExpanded ? icons.faChevronUp : icons.faChevronDown} />
@@ -56,32 +59,24 @@ class MenuItem extends Component {
             )
             : null }
         </div>
-        <Collapse isOpen={menuItemExpanded}>
-          <div className="app-submenus-container">
-            {subItems.map(({ label: subItemLabel, href }) => (
-              <Link to={href} key={subItemLabel}>
-                <span className="app-submenu-item">{subItemLabel}</span>
-              </Link>
-            ))}
-          </div>
-        </Collapse>
+        { showSubItemsComponents
+          ? (
+            <Collapse isOpen={menuItemExpanded}>
+              <div className="app-submenus-container">
+                {subItems.map(({ label: subItemLabel, href }) => (
+                  <Link to={href} key={subItemLabel}>
+                    <span className="app-submenu-item">{subItemLabel}</span>
+                  </Link>
+                ))}
+              </div>
+            </Collapse>
+          )
+          : null
+        }
       </div>
     );
   };
 
-  renderCollapsedMenuItem = iconKey => (
-    <div className="app-menu-item-container app-menu-item-container-collapsed">
-      <div className="app-menu-tem-icon-container">
-        <FontAwesomeIcon icon={icons[iconKey]} />
-      </div>
-    </div>
-  );
-
-  renderMenuItem = ({
-    collapsed, iconKey, label, subItems,
-  }) => collapsed
-    ? this.renderCollapsedMenuItem(iconKey)
-    : this.renderExpandedMenuItem(iconKey, label, subItems);
 
   render() {
     const {
