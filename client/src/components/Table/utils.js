@@ -1,17 +1,18 @@
 import React from 'react';
-import { findColumnsByName, renderDateCel } from './helpers';
-
-const renderTextCel = value => <td key={value}>{`${value}`}</td>;
+import {
+  findColumnsByName, renderDateCel, renderTextCel, renderLabel,
+} from './helpers';
+import { types } from './const';
 
 export const renderHeader = columns => columns.map(({ name }) => <th key={name}>{name}</th>);
 
 export const renderRow = (row, columns, key) => (
   <tr key={key}>
-    {row.map(({ column, value }) => {
+    {row.map(({ column, value }, index) => {
       const { type = '', format = '' } = findColumnsByName(column, columns) || {};
-
-      if (type === Date) return renderDateCel(value, format);
-      return renderTextCel(value);
+      if (type === types.LABEL) return renderLabel(value);
+      if (type === types.DATE) return renderDateCel(value, format, index);
+      return renderTextCel(value, index);
     })}
   </tr>
 );
