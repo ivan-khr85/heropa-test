@@ -27,6 +27,20 @@ export const data = [
       value: new Date(2548332435634),
     },
   ],
+  [
+    {
+      column: 'A',
+      value: 'new values',
+    },
+    {
+      column: 'B',
+      value: 999999,
+    },
+    {
+      column: 'C',
+      value: new Date(254333332435634),
+    },
+  ],
 ];
 
 export const columns = [

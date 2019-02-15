@@ -7,7 +7,16 @@ export const getFilters = R.compose(
   R.reduce(reducer, []),
 );
 
-export const getSubFilters = (name, data) => R.compose(
-
+export const getSubFilters = name => R.compose(
+  R.uniq,
+  R.reduce(
+    (acc, val) => R.append(
+      R.pipe(
+        R.find(R.propEq('column', name)),
+        R.prop('value'),
+      )(val),
+      acc,
+    ),
+    [],
+  ),
 );
-
