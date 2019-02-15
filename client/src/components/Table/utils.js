@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  findColumnsByName, renderDateCel, renderTextCel, renderLabel,
+  findColumnsByName, renderRowItem,,
 } from './helpers';
 import { types } from './const';
 
@@ -10,9 +10,7 @@ export const renderRow = (row, columns, key) => (
   <tr key={key}>
     {row.map(({ column, value }, index) => {
       const { type = '', format = '' } = findColumnsByName(column, columns) || {};
-      if (type === types.LABEL) return renderLabel(value);
-      if (type === types.DATE) return renderDateCel(value, format, index);
-      return renderTextCel(value, index);
+      return renderRowItem(type, value, format, index);
     })}
   </tr>
 );

@@ -17,4 +17,5 @@ export const getStatusesColors = R.cond([
 export const types = {
   DATE: Date,
   LABEL: 'Label',
+  STRING: String,
 };
