@@ -5,7 +5,7 @@ import * as R from 'ramda';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as icons from '@fortawesome/free-solid-svg-icons';
 
-import { Collapse, Card, CardBody } from 'reactstrap';
+import { Collapse } from 'reactstrap';
 import './menuItem.scss';
 
 class MenuItem extends Component {
