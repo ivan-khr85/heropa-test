@@ -14,5 +14,9 @@
 
 .app-menu-items-container {
   padding: 25px 0;
+
+  &.app-menu-items-container-collapsed {
+    padding: 0;
+  }
 }
 

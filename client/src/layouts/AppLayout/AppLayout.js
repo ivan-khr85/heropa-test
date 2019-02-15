@@ -20,15 +20,6 @@ class AppLayout extends Component {
     };
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    const { children } = this.props;
-    const { children: nextChildren } = nextProps;
-    const { menuCollapsed } = this.state;
-    const { menuCollapsed: nextMenuCollapsed } = nextState;
-
-    return menuCollapsed !== nextMenuCollapsed || !R.equals(children, nextChildren);
-  }
-
   // !!! menu collapsing logic should be moved to a menu component with using callback
   //= ===========================================================================================
 

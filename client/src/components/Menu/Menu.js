@@ -45,23 +45,19 @@ class Menu extends Component {
       {
         label: 'Reports',
         iconKey: 'faCogs',
-        href: '/reports',
       },
       {
         label: 'Administration',
         iconKey: 'faLandmark',
-        href: '/administration',
       },
     ];
 
     return (
       <Col className={`app-menu-container ${collapsed ? 'app-menu-container-collapsed' : ''}`}>
         <UserSection userName="Firstname Lastname" collapsed={collapsed} />
-
-        <div className="app-menu-items-container">
+        <div className={`app-menu-items-container ${collapsed ? 'app-menu-items-container-collapsed' : ''}`}>
           {menuItemData.map(data => <MenuItem {...{ key: data.label, data, collapsed }} />)}
         </div>
-
       </Col>
     );
   }
