@@ -11,24 +11,25 @@ import {
   DropdownItem,
   Button,
 } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSignOutAlt,
   faBell,
   faGlobeAmericas,
   faChevronLeft,
-  faChevronRight
-} from '@fortawesome/free-solid-svg-icons'
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 import './navbar.scss';
 
 class NavbarComponent extends Component {
-  shouldComponentUpdate(nextProps) {
-    return nextProps.menuCollapsed !== this.props.menuCollapsed;
+  shouldComponentUpdate({ menuCollapsed: nextMenuCollapsed }) {
+    const { menuCollapsed } = this.props;
+    return menuCollapsed !== nextMenuCollapsed;
   }
 
   onToggleClick = () => {
-    const { menuCollapsed, toggleMenu  } = this.props;
+    const { menuCollapsed, toggleMenu } = this.props;
     toggleMenu(!menuCollapsed);
   };
 
