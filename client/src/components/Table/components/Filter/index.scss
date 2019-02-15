@@ -1,0 +1,10 @@
+.table-component {
+  .filter-dropdown {
+    padding: 0 5px;
+    .btn {
+      &:active {
+        border-radius: 5px;
+      }
+    }
+  }
+}

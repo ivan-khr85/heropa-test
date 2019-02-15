@@ -9,12 +9,16 @@
   .filter {
     display: flex;
 
-    .button-filter {
+    .button-filter, .btn-secondary {
       outline: none;
-      padding: 5px 6.5px;
+      padding: 5px 12px;
       border: none;
-      margin: 5px 10px;
+      border-radius: 5px;
+      margin: 5px 5px;
       background-color: transparent;
+      .btn {
+        padding: 0;
+      }
       &:focus {
         box-shadow: none !important;
       }
