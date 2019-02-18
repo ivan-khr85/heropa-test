@@ -52,29 +52,23 @@ class Filter extends React.Component {
     console.log('data ', data);
     console.log('filters ', filters);
 
-
     // this function should be moved into utils
 
-    const compareValues = (first, second, type) => {
-      console.log(
-        type,
-        isDateEqual(first, second)
-      )
-     return R.cond([
-        [R.equals('String'), ()=> R.equals(first, second)],
-        [R.equals('Number'), () =>R.equals(Number(first), Number(second))],
-        [R.equals('Date'), () => isDateEqual(first, second)],
-        [R.T, R.F],
-      ])(type)
-      };
-
+    const compareValues = (first, second, type) => R.cond([
+      [R.equals('String'), () => R.equals(first, second)],
+      [R.equals('Number'), () => R.equals(Number(first), Number(second))],
+      [R.equals('Date'), () => isDateEqual(first, second)],
+      [R.T, R.F],
+    ])(type);
 
     const filterDataAnd = (data, filters, columns) => {
-      const filtersObject = filters.reduce((accum, { selectedColumn, selectedValue }) => ({ ...accum, [selectedColumn]: selectedValue }), {});
-      const columnTypes = columns.reduce((accum, { name, type }) => ({ ...accum, [name]: type }), {});
+      const filtersObject = filters.reduce(
+        (acc, { selectedColumn, selectedValue }) => ({ ...acc, [selectedColumn]: selectedValue }),
+        {},
+      );
+      const columnTypes = columns.reduce((acc, { name, type }) => ({ ...acc, [name]: type }), {});
 
       console.log(columnTypes);
-      console.log('filtersObject ', filtersObject);
 
       return data.filter((rowArray) => {
         let result;
@@ -95,20 +89,6 @@ class Filter extends React.Component {
     };
 
     console.log(filterDataAnd(data, filters, columns));
-
-    //   // const getFilter = (field, value) => R.find(R.propEq(field, value))(filters);
-    //   const getFilterData = (column, value) => filters
-    //     .find(({
-    //       selectedColumn,
-    //       selectedValue,
-    //     }) => selectedColumn === `${column}` && selectedValue === `${value}`);
-    //   data.filter((rowItem) => {
-    //     const reducer = (acc, { column, value }) => {
-    //       const { selectedColumn, selectedValue } = getFilterData(column, value);
-    //     };
-    //     const result = rowItem.reduce(reducer, true);
-    //     console.log(result);
-    //   });
   };
 
   selectColumns = (value, index, format) => {
