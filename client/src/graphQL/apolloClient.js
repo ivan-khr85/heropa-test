@@ -4,10 +4,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { GRAPHQL_URI_HTTP as uri } from './config';
 
-const link = new HttpLink({ uri });
-const cache = new InMemoryCache();
-
 export default new ApolloClient({
-  link,
-  cache,
+  link: new HttpLink({ uri }),
+  cache: new InMemoryCache(),
 });
