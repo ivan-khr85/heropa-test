@@ -1,10 +1,8 @@
 import R from 'ramda';
-import { coursesTypes } from './Courses';
-import { scalarTypes } from './scalars';
+import { menuTypes } from './Menu';
 import { rootTypes } from './root';
 
 export default R.flatten([
   rootTypes,
-  scalarTypes,
-  coursesTypes,
+  menuTypes,
 ]);

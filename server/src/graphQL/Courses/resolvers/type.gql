@@ -1,4 +1,0 @@
-extend type Query {
-  courses(offset: Int = 0, limit: Int = 10): [Course]
-  singleCourse(_id: ID!): Course
-}
