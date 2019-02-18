@@ -52,6 +52,40 @@ class Filter extends React.Component {
     console.log('filters ', filters);
 
 
+    const compareValues = (first, second, type) => {
+      console.log('first ', first, '  second ', second, '    type ', type);
+
+      return true;
+    }
+
+    const filterDataAnd = (data, filters, columns) => {
+      const filtersObject = filters.reduce((accum, { selectedColumn, selectedValue }) => ({ ...accum, [selectedColumn]: selectedValue }), {});
+      const columnTypes = columns.reduce((accum, { name, type }) => ({ ...accum, [name]: type }), {});
+
+      console.log(columnTypes);
+
+      console.log('filtersObject ', filtersObject);
+
+      return data.filter((rowArray) => {
+        let result;
+
+        for (let i = 0; i < rowArray.length; i += 1) {
+          const { column, value } = rowArray[i];
+          const filterValue = filtersObject[column];
+          if (filterValue) {
+            // result = result !== false && filterValue === value.toString();  // And
+            // result = result || filterValue === value; // Or
+
+            result = result || compareValues(filterValue, value, columnTypes[column]);
+          }
+        }
+
+        return Boolean(result);
+      });
+    };
+
+    console.log(filterDataAnd(data, filters, columns));
+
     //   // const getFilter = (field, value) => R.find(R.propEq(field, value))(filters);
     //   const getFilterData = (column, value) => filters
     //     .find(({
