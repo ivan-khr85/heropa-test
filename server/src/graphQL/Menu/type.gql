@@ -1,0 +1,11 @@
+type menuItem {
+  label: String
+  iconKey: String
+  href: String
+  subItems: [subMenuItem]
+}
+
+type subMenuItem {
+  label: String
+  href: String
+}

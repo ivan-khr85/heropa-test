@@ -1,12 +1,7 @@
-import { coursesResolvers, coursesMutation } from './Courses';
-import { scalarResolvers } from './scalars';
+import { menuResolvers } from './Menu';
 
 export default {
-  ...scalarResolvers,
   Query: {
-    ...coursesResolvers,
-  },
-  Mutation: {
-    ...coursesMutation,
+    ...menuResolvers,
   },
 };
