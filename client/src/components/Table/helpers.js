@@ -8,7 +8,9 @@ const genClassName = index => `${index === 0 ? 'first-column' : ''}`;
 
 export const findColumnsByName = (neededName, columns) => columns.find(({ name }) => name === neededName);
 
-const renderTextCel = (value, index) => <td className={genClassName(index)} key={`${value}-${index}`}>{`${value}`}</td>;
+const renderTextCel = (value, index) => (
+  <td className={genClassName(index)} key={`${value}-${index}`}>{`${value}`}</td>
+);
 
 const renderDateCel = (value, format, index) => (
   <td className={genClassName(index)} key={value}>
