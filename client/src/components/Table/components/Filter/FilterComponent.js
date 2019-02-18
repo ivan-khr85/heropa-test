@@ -4,6 +4,7 @@ import T from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Button, Collapse } from 'reactstrap';
+import isDateEqual from 'date-fns/is_equal';
 
 import FilterItem from '../FilterItem';
 
@@ -52,18 +53,27 @@ class Filter extends React.Component {
     console.log('filters ', filters);
 
 
-    const compareValues = (first, second, type) => {
-      console.log('first ', first, '  second ', second, '    type ', type);
+    // this function should be moved into utils
 
-      return true;
-    }
+    const compareValues = (first, second, type) => {
+      console.log(
+        type,
+        isDateEqual(first, second)
+      )
+     return R.cond([
+        [R.equals('String'), ()=> R.equals(first, second)],
+        [R.equals('Number'), () =>R.equals(Number(first), Number(second))],
+        [R.equals('Date'), () => isDateEqual(first, second)],
+        [R.T, R.F],
+      ])(type)
+      };
+
 
     const filterDataAnd = (data, filters, columns) => {
       const filtersObject = filters.reduce((accum, { selectedColumn, selectedValue }) => ({ ...accum, [selectedColumn]: selectedValue }), {});
       const columnTypes = columns.reduce((accum, { name, type }) => ({ ...accum, [name]: type }), {});
 
       console.log(columnTypes);
-
       console.log('filtersObject ', filtersObject);
 
       return data.filter((rowArray) => {
