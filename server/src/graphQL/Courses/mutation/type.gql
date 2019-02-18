@@ -1,0 +1,20 @@
+enum visabilityEnum {
+  public
+  private
+}
+
+enum statusEnum {
+  available
+}
+
+extend type Mutation {
+  createCourse(
+    name: String!
+    location: String!
+    imageID: ID
+    type: String
+    VLUs: String!
+    visability: visabilityEnum!
+    status: statusEnum!
+  ): Course!
+}

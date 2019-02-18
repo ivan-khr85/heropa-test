@@ -15,10 +15,10 @@ export const getStatusesColors = R.cond([
 ]);
 
 export const types = {
-  DATE: Date,
+  DATE: 'Date',
   LABEL: 'Label',
-  STRING: String,
-  NUMBER: Number,
+  STRING: 'String',
+  NUMBER: 'Number',
 };
 
 export const iconSize = 'lg';

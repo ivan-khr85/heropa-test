@@ -1,6 +1,7 @@
-import { resolvers, resolversTypes } from './resolvers';
+import { coursesResolvers, resolversTypes } from './resolvers';
+import { mutationTypes, coursesMutation } from './mutation';
 import types from './type.gql';
 
-const coursesTypes = [types, resolversTypes];
+const coursesTypes = [types, resolversTypes, mutationTypes];
 
-export { resolvers, coursesTypes };
+export { coursesResolvers, coursesTypes, coursesMutation };
