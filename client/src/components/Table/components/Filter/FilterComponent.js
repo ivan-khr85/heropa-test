@@ -68,10 +68,7 @@ class Filter extends React.Component {
   };
 
   selectColumns = (value, index, format) => {
-    const {
-      state: { filters },
-      filterDataTable,
-    } = this;
+    const { filters } = this.state;
 
     const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
       if (index !== idx) return [...acc, { selectedColumn, selectedValue }];
@@ -83,7 +80,7 @@ class Filter extends React.Component {
         },
       ];
     };
-    this.setState({ filters: filters.reduce(reducer, []) }, filterDataTable);
+    this.setState({ filters: filters.reduce(reducer, []) });
   };
 
   selectValue = (value, index, format) => {
