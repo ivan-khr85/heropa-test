@@ -1,4 +1,5 @@
 import React from 'react';
+import * as R from 'ramda';
 import T from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -40,23 +41,51 @@ class Filter extends React.Component {
     });
   };
 
+  filterDataTable = () => {
+    //   const {
+    //     props: { columns, data },
+    //     state: { filters },
+    //   } = this;
+    //   // const getFilter = (field, value) => R.find(R.propEq(field, value))(filters);
+    //   const getFilterData = (column, value) => filters
+    //     .find(({
+    //       selectedColumn,
+    //       selectedValue,
+    //     }) => selectedColumn === `${column}` && selectedValue === `${value}`);
+    //   data.filter((rowItem) => {
+    //     const reducer = (acc, { column, value }) => {
+    //       const { selectedColumn, selectedValue } = getFilterData(column, value);
+    //     };
+    //     const result = rowItem.reduce(reducer, true);
+    //     console.log(result);
+    //   });
+  };
+
   selectColumns = (value, index, format) => {
-    const { filters } = this.state;
+    const {
+      state: { filters },
+      filterDataTable,
+    } = this;
+
     const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
       if (index !== idx) return [...acc, { selectedColumn, selectedValue }];
       return [
         ...acc,
         {
           selectedColumn: formatFilterValue(value, format),
-          selectedValue,
+          selectedValue: null,
         },
       ];
     };
-    this.setState({ filters: filters.reduce(reducer, []) });
+    this.setState({ filters: filters.reduce(reducer, []) }, filterDataTable);
   };
 
   selectValue = (value, index, format) => {
-    const { filters } = this.state;
+    const {
+      state: { filters },
+      filterDataTable,
+    } = this;
+
     const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
       if (index !== idx) return [...acc, { selectedColumn, selectedValue }];
       return [
@@ -67,7 +96,7 @@ class Filter extends React.Component {
         },
       ];
     };
-    this.setState({ filters: filters.reduce(reducer, []) });
+    this.setState({ filters: filters.reduce(reducer, []) }, filterDataTable);
   };
 
   render() {
@@ -89,7 +118,7 @@ class Filter extends React.Component {
           <div className="inner-collapse">
             {filters.map(({ selectedColumn, selectedValue }, index) => (
               <div
-                className="filter-item"
+                className="filter-item-container"
                 // eslint-disable-next-line react/no-array-index-key
                 key={`${selectedColumn}-${selectedValue}-${index}`}
               >

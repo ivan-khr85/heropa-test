@@ -1,6 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
-import { format as formatDate } from 'date-fns';
+import formatDate from 'date-fns/format';
 import { findColumnsByName, renderRowItem } from './helpers';
 
 export const renderHeader = columns => columns.map(({ name }) => <th key={name}>{name}</th>);

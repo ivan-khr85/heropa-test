@@ -1,6 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
-import { format as formatDate } from 'date-fns';
+import formatDate from 'date-fns/format';
 import { defaultDateFormat, getStatusesColors, types } from './const';
 import StatusLabel from '../StatusLabel';
 
