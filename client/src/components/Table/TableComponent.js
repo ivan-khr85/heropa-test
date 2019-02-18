@@ -7,7 +7,7 @@ import { faBars, faCogs, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { renderHeader, renderData, filterData } from './utils';
 import './index.scss';
 import colors from '../../const/colors';
-import { iconSize } from './const';
+import { iconsSize } from './const';
 import { Filter } from './components';
 
 class TableComponent extends React.Component {
@@ -37,13 +37,13 @@ class TableComponent extends React.Component {
       <div className="table-component">
         <div className="filter">
           <Button className="button-filter">
-            <FontAwesomeIcon size={iconSize} icon={faBars} color={colors.table.inactiveIcon} />
+            <FontAwesomeIcon size={iconsSize.addFilter} icon={faBars} color={colors.table.inactiveIcon} />
           </Button>
           <Button className="button-filter">
-            <FontAwesomeIcon size={iconSize} icon={faCogs} color={colors.table.inactiveIcon} />
+            <FontAwesomeIcon size={iconsSize.addFilter} icon={faCogs} color={colors.table.inactiveIcon} />
           </Button>
           <Button className="button-filter">
-            <FontAwesomeIcon size={iconSize} icon={faFilter} color={colors.table.inactiveIcon} />
+            <FontAwesomeIcon size={iconsSize.addFilter} icon={faFilter} color={colors.table.inactiveIcon} />
           </Button>
           <Filter columns={columns} data={data} filterDataTable={filterDataTable} />
         </div>

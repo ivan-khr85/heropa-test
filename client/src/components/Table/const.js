@@ -21,4 +21,7 @@ export const types = {
   NUMBER: 'Number',
 };
 
-export const iconSize = 'lg';
+export const iconsSize = {
+  addFilter: 'lg',
+  removeFilter: 'xs',
+};

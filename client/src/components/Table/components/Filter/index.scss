@@ -10,6 +10,10 @@
       color: $darkGrayNav1;
       padding: 10px 16px;
 
+      .remove-filter-item {
+        padding: 0 5px;
+        margin: 0;
+      }
 
       .filter-item-container {
         display: flex;

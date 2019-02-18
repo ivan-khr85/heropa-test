@@ -44,11 +44,13 @@ export const getSubFilters = ({ data, columns }, selectedColumn) => {
 export const formatFilterValue = (name, format, isCol) => format && !isCol ? formatDate(name, format) : `${name}`;
 
 export const filterData = (data, filters, columns) => {
+  if (R.isEmpty(filters)) return data;
   const filtersObject = filters.reduce(
     (acc, { selectedColumn, selectedValue }) => ({ ...acc, [selectedColumn]: selectedValue }),
     {},
   );
-  const columnTypes = columns.reduce((acc, { name, type }) => ({ ...acc, [name]: type }), {});
+  const reducer = (acc, { name, type }) => ({ ...acc, [name]: type });
+  const columnTypes = columns.reduce(reducer, {});
 
   return data.filter(rowArray => rowArray.reduce((acc, { column, value }) => {
     const filterValue = filtersObject[column];
