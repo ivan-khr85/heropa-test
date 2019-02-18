@@ -35,41 +35,19 @@ class TabLayout extends Component {
   render() {
     const {
       state: { activeTabKey },
+      props: { tabsConfig },
       renderTabs,
       setActiveTab,
       renderTabContent,
     } = this;
 
-    const tabLayoutConfig = [
-      {
-        name: 'Tab1',
-        key: 1,
-        component: (<h3>Tab 1 content</h3>),
-      },
-      {
-        name: 'Tab2',
-        key: 2,
-        component: (<h3>Tab 2 content</h3>),
-      },
-      {
-        name: 'Tab3',
-        key: 3,
-        component: (<h3>Tab 3 content</h3>),
-      },
-      {
-        name: 'Tab4',
-        key: 4,
-        component: (<h3>Tab 4 content</h3>),
-      },
-    ];
-
     return (
       <div className="app-tab-layout-container">
         <Nav tabs>
-          {renderTabs(tabLayoutConfig, activeTabKey, setActiveTab)}
+          {renderTabs(tabsConfig, activeTabKey, setActiveTab)}
         </Nav>
         <TabContent activeTab={activeTabKey}>
-          {renderTabContent(tabLayoutConfig)}
+          {renderTabContent(tabsConfig)}
         </TabContent>
       </div>
     );
@@ -77,8 +55,7 @@ class TabLayout extends Component {
 }
 
 TabLayout.propsTypes = {
-  // children: T.oneOfType([T.element, T.arrayOf(T.element)]).isRequired,
-
+  tabsConfig: T.arrayOf(T.object).isRequired,
 };
 
 export default TabLayout;
