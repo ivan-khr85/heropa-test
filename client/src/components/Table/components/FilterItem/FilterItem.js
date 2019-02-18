@@ -4,9 +4,9 @@ import {
   ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem,
 } from 'reactstrap';
 
+import { formatFilterValue } from '../../utils';
 import { defaultFilterTitle } from './const';
 import './index.scss';
-import { formatFilterValue } from '../../utils';
 
 class Filter extends React.Component {
   state = {
