@@ -17,8 +17,8 @@ export default new Schema({
     enum: allowedVisibility,
   },
   createdAt: {
-    type: Number,
-    default: new Date().getTime(),
+    type: Date,
+    default: Date.now,
   },
   status: {
     type: String,

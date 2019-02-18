@@ -1,7 +1,12 @@
-import { resolvers } from './Courses';
+import { coursesResolvers, coursesMutation } from './Courses';
+import { scalarResolvers } from './scalars';
 
 export default {
+  ...scalarResolvers,
   Query: {
-    ...resolvers,
+    ...coursesResolvers,
+  },
+  Mutation: {
+    ...coursesMutation,
   },
 };

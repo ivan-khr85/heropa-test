@@ -1,5 +1,5 @@
 import resolversTypes from './type.gql';
-import { resolvers } from './resolvers';
+import { coursesResolvers } from './resolvers';
 
 
-export { resolversTypes, resolvers };
+export { resolversTypes, coursesResolvers };
