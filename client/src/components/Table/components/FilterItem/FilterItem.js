@@ -21,7 +21,15 @@ class Filter extends React.Component {
   render() {
     const {
       props: {
-        data, getSubItems, selectedValue, selectedColumn, isCanSelect, isColumns, selectFunc, index,
+        data,
+        index,
+        isColumns,
+        selectFunc,
+        getSubItems,
+        isCanSelect,
+        titleFormat,
+        selectedValue,
+        selectedColumn,
       },
       state: { isOpenedFilter },
       switchFilterState,
@@ -31,7 +39,7 @@ class Filter extends React.Component {
 
     return (
       <ButtonDropdown isOpen={isOpenedFilter} toggle={switchFilterState} className="filter-item">
-        <DropdownToggle caret>{filterTitle || defaultFilterTitle}</DropdownToggle>
+        <DropdownToggle caret>{formatFilterValue(filterTitle || defaultFilterTitle, titleFormat)}</DropdownToggle>
         {isCanSelect ? (
           <DropdownMenu>
             {getSubItems(data, selectedColumn).map(({ name, format }) => (
@@ -48,6 +56,7 @@ class Filter extends React.Component {
 
 Filter.propTypes = {
   data: T.object,
+  titleFormat: T.string,
   isColumns: T.bool,
   selectedValue: T.oneOfType([T.string, T.number, T.instanceOf(Date)]),
   selectedColumn: T.string,

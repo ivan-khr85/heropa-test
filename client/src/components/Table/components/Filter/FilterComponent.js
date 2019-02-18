@@ -10,7 +10,7 @@ import FilterItem from '../FilterItem';
 
 import { iconSize } from '../../const';
 import { colors } from '../../../../const';
-import { getFilters, getSubFilters, formatFilterValue } from '../../utils';
+import { getFilters, getSubFilters } from '../../utils';
 import './index.scss';
 
 class Filter extends React.Component {
@@ -37,6 +37,7 @@ class Filter extends React.Component {
         {
           selectedColumn: '',
           selectedValue: '',
+          format: null,
         },
       ],
     });
@@ -91,7 +92,7 @@ class Filter extends React.Component {
     console.log(filterDataAnd(data, filters, columns));
   };
 
-  selectColumns = (value, index, format) => {
+  selectColumns = (value, index) => {
     const { filters } = this.state;
 
     const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
@@ -99,8 +100,9 @@ class Filter extends React.Component {
       return [
         ...acc,
         {
-          selectedColumn: formatFilterValue(value, format),
+          selectedColumn: value,
           selectedValue: null,
+          format: null,
         },
       ];
     };
@@ -119,7 +121,8 @@ class Filter extends React.Component {
         ...acc,
         {
           selectedColumn,
-          selectedValue: formatFilterValue(value, format),
+          selectedValue: value,
+          format,
         },
       ];
     };
@@ -143,7 +146,7 @@ class Filter extends React.Component {
         </Button>
         <Collapse className="filter-collapse" isOpen={isOpenedFilters}>
           <div className="inner-collapse">
-            {filters.map(({ selectedColumn, selectedValue }, index) => (
+            {filters.map(({ selectedColumn, selectedValue, format }, index) => (
               <div
                 className="filter-item-container"
                 // eslint-disable-next-line react/no-array-index-key
@@ -154,6 +157,7 @@ class Filter extends React.Component {
                   isColumns
                   isCanSelect
                   index={index}
+                  titleFormat={format}
                   data={{ columns }}
                   selectFunc={selectColumns}
                   getSubItems={getFilters}
@@ -161,6 +165,7 @@ class Filter extends React.Component {
                 />
                 <FilterItem
                   index={index}
+                  titleFormat={format}
                   data={{ data, columns }}
                   selectFunc={selectValue}
                   getSubItems={getSubFilters}
