@@ -4,10 +4,19 @@
   width: 250px;
   position: absolute;
   height: 100vh;
+  padding: 0;
   //transition: width 0.5s;
   background-color: $darkGrayNav2;
   &.app-menu-container-collapsed {
     width: 70px;
+  }
+}
+
+.app-menu-items-container {
+  padding: 25px 0;
+
+  &.app-menu-items-container-collapsed {
+    padding: 0;
   }
 }
 

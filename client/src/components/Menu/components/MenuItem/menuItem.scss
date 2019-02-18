@@ -1,0 +1,45 @@
+@import "../../../../styles/colors";
+
+.app-menu-item-container, .app-submenu-item {
+  display: inline-flex;
+  color: $lightGray2;
+  width: 100%;
+  padding: 15px 24px;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    color: $white;
+    background-color: $darkGrayNav1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.app-menu-item-container {
+  .app-menu-tem-icon-container {
+    margin-right: 10px;
+  }
+
+  .app-chevron-icon-container {
+    margin-left: auto;
+  }
+
+  &.app-menu-item-container-collapsed {
+    .app-menu-item-label {
+      display: none;
+    }
+  }
+}
+
+.app-submenus-container {
+  display: flex;
+  flex-direction: column;
+
+  .app-submenu-item {
+    padding-left: 60px;
+  }
+}

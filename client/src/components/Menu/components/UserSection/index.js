@@ -2,17 +2,16 @@ import React from 'react';
 import T from 'prop-types';
 
 import {
-  Row,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
-import { getReducedUserName } from './utils';
+import { getReducedUserName } from '../../utils';
 import './userSection.scss';
 
 const UserSection = ({ userName, collapsed }) => (
-  <Row>
+  <div>
     {collapsed
       ? (
         <div className="app-user-container-collapsed">
@@ -41,7 +40,7 @@ const UserSection = ({ userName, collapsed }) => (
         </div>
       )
     }
-  </Row>
+  </div>
 );
 
 UserSection.propTypes = {

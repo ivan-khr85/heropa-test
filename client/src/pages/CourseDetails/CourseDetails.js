@@ -1,19 +1,5 @@
-import React, { Component } from 'react';
-import T from 'prop-types';
+import React from 'react';
 
-class CourseDetails extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
-  render() {
-    return (<h3>CourseDetails page </h3>);
-  }
-}
-
-CourseDetails.propTypes = {
-
-};
+const CourseDetails = () => (<h3>CourseDetails page </h3>);
 
 export default CourseDetails;
