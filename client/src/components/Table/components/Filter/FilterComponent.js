@@ -42,10 +42,16 @@ class Filter extends React.Component {
   };
 
   filterDataTable = () => {
-    //   const {
-    //     props: { columns, data },
-    //     state: { filters },
-    //   } = this;
+    const {
+      props: { columns, data },
+      state: { filters },
+    } = this;
+
+    console.log('columns ', columns);
+    console.log('data ', data);
+    console.log('filters ', filters);
+
+
     //   // const getFilter = (field, value) => R.find(R.propEq(field, value))(filters);
     //   const getFilterData = (column, value) => filters
     //     .find(({
