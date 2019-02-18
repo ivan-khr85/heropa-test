@@ -1,5 +1,4 @@
 import React from 'react';
-import * as R from 'ramda';
 import T from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +8,7 @@ import FilterItem from '../FilterItem';
 
 import { iconSize } from '../../const';
 import { colors } from '../../../../const';
-import { getFilters, getSubFilters, formatFilterValue } from '../../utils';
+import { getFilters, getSubFilters } from '../../utils';
 import './index.scss';
 
 class Filter extends React.Component {
@@ -36,32 +35,13 @@ class Filter extends React.Component {
         {
           selectedColumn: '',
           selectedValue: '',
+          format: null,
         },
       ],
     });
   };
 
-  filterDataTable = () => {
-    //   const {
-    //     props: { columns, data },
-    //     state: { filters },
-    //   } = this;
-    //   // const getFilter = (field, value) => R.find(R.propEq(field, value))(filters);
-    //   const getFilterData = (column, value) => filters
-    //     .find(({
-    //       selectedColumn,
-    //       selectedValue,
-    //     }) => selectedColumn === `${column}` && selectedValue === `${value}`);
-    //   data.filter((rowItem) => {
-    //     const reducer = (acc, { column, value }) => {
-    //       const { selectedColumn, selectedValue } = getFilterData(column, value);
-    //     };
-    //     const result = rowItem.reduce(reducer, true);
-    //     console.log(result);
-    //   });
-  };
-
-  selectColumns = (value, index, format) => {
+  selectColumns = (value, index) => {
     const { filters } = this.state;
 
     const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
@@ -69,8 +49,9 @@ class Filter extends React.Component {
       return [
         ...acc,
         {
-          selectedColumn: formatFilterValue(value, format),
+          selectedColumn: value,
           selectedValue: null,
+          format: null,
         },
       ];
     };
@@ -80,7 +61,7 @@ class Filter extends React.Component {
   selectValue = (value, index, format) => {
     const {
       state: { filters },
-      filterDataTable,
+      props: { filterDataTable },
     } = this;
 
     const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
@@ -89,11 +70,14 @@ class Filter extends React.Component {
         ...acc,
         {
           selectedColumn,
-          selectedValue: formatFilterValue(value, format),
+          selectedValue: value,
+          format,
         },
       ];
     };
-    this.setState({ filters: filters.reduce(reducer, []) }, filterDataTable);
+    const newFilters = filters.reduce(reducer, []);
+
+    this.setState({ filters: newFilters }, filterDataTable(newFilters));
   };
 
   render() {
@@ -113,7 +97,7 @@ class Filter extends React.Component {
         </Button>
         <Collapse className="filter-collapse" isOpen={isOpenedFilters}>
           <div className="inner-collapse">
-            {filters.map(({ selectedColumn, selectedValue }, index) => (
+            {filters.map(({ selectedColumn, selectedValue, format }, index) => (
               <div
                 className="filter-item-container"
                 // eslint-disable-next-line react/no-array-index-key
@@ -124,6 +108,7 @@ class Filter extends React.Component {
                   isColumns
                   isCanSelect
                   index={index}
+                  titleFormat={format}
                   data={{ columns }}
                   selectFunc={selectColumns}
                   getSubItems={getFilters}
@@ -131,6 +116,7 @@ class Filter extends React.Component {
                 />
                 <FilterItem
                   index={index}
+                  titleFormat={format}
                   data={{ data, columns }}
                   selectFunc={selectValue}
                   getSubItems={getSubFilters}
@@ -155,6 +141,7 @@ class Filter extends React.Component {
 Filter.propTypes = {
   columns: T.array,
   data: T.array,
+  filterDataTable: T.func.isRequired,
 };
 
 Filter.defaultProps = {
