@@ -1,7 +1,11 @@
+@import "../../styles/colors";
+
 .app-root-layout {
   .app-layout-container {
+    background-color: $lightGray;
+    height: 100vh;
+
     margin-left: 250px;
-    //transition: margin 0.5s;
     &.app-layout-container-collapsed {
       margin-left: 70px;
     }

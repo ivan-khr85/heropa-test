@@ -1,5 +1,8 @@
 import React from 'react';
 
-const CourseDetails = () => (<h3>CourseDetails page </h3>);
+import TabLayout from '../../layouts/TabLayout';
+import { courseDetailsTabsConfig as tabsConfig } from './fixtures';
+
+const CourseDetails = () => <TabLayout {...{ tabsConfig }} />;
 
 export default CourseDetails;
