@@ -1,10 +1,10 @@
 type Course {
   _id: ID!
-  lcoation: String
+  location: String
   imageID: String
   type: String
   VLUs: String
   vilibility: String
-  createdAt: Int
+  createdAt: DateTime
   status: String
 }
