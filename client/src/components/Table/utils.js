@@ -1,7 +1,7 @@
 import React from 'react';
 import * as R from 'ramda';
 import formatDate from 'date-fns/format';
-import { findColumnsByName, renderRowItem } from './helpers';
+import { findColumnsByName, renderRowItem, compareValues } from './helpers';
 
 export const renderHeader = columns => columns.map(({ name }) => <th key={name}>{name}</th>);
 
@@ -41,4 +41,18 @@ export const getSubFilters = ({ data, columns }, selectedColumn) => {
   )(data);
 };
 
-export const formatFilterValue = (name, format) => (format ? formatDate(name, format) : `${name}`);
+export const formatFilterValue = (name, format, isCol) => format && !isCol ? formatDate(name, format) : `${name}`;
+
+export const filterData = (data, filters, columns) => {
+  const filtersObject = filters.reduce(
+    (acc, { selectedColumn, selectedValue }) => ({ ...acc, [selectedColumn]: selectedValue }),
+    {},
+  );
+  const columnTypes = columns.reduce((acc, { name, type }) => ({ ...acc, [name]: type }), {});
+
+  return data.filter(rowArray => rowArray.reduce((acc, { column, value }) => {
+    const filterValue = filtersObject[column];
+
+    return filterValue ? acc || compareValues(filterValue, value, columnTypes[column]) : acc;
+  }, false));
+};

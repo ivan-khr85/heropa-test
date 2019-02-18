@@ -1,6 +1,8 @@
 import React from 'react';
 import * as R from 'ramda';
 import formatDate from 'date-fns/format';
+import isDateEqual from 'date-fns/is_equal';
+
 import { defaultDateFormat, getStatusesColors, types } from './const';
 import StatusLabel from '../StatusLabel';
 
@@ -28,4 +30,11 @@ export const renderRowItem = (type, value, format, index) => R.cond([
   [R.equals(types.LABEL), () => renderLabelCel(value, index)],
   [R.equals(types.DATE), () => renderDateCel(value, format, index)],
   [R.T, () => ''],
+])(type);
+
+export const compareValues = (first, second, type) => R.cond([
+  [R.equals('String'), () => R.equals(first, second)],
+  [R.equals('Number'), () => R.equals(Number(first), Number(second))],
+  [R.equals('Date'), () => isDateEqual(first, second)],
+  [R.T, R.F],
 ])(type);

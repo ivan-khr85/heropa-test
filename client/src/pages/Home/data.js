@@ -20,7 +20,7 @@ export const data = [
     },
     {
       column: 'B',
-      value: 12,
+      value: 10202.182,
     },
     {
       column: 'C',
@@ -30,11 +30,11 @@ export const data = [
   [
     {
       column: 'A',
-      value: 'Salas',
+      value: 'Available',
     },
     {
       column: 'B',
-      value: 10202.182,
+      value: 12,
     },
     {
       column: 'C',
