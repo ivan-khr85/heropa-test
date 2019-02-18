@@ -99,18 +99,25 @@ export const data = [
   ],
 ];
 
+export const types = {
+  DATE: 'Date',
+  LABEL: 'Label',
+  STRING: 'String',
+  NUMBER: 'Number',
+};
+
 export const columns = [
   {
     name: 'A',
-    type: String,
+    type: types.STRING,
   },
   {
     name: 'B',
-    type: Number,
+    type: types.NUMBER,
   },
   {
     name: 'C',
-    type: Date,
+    type: types.DATE,
     format: 'YYYY/MM/DD',
   },
 ];
