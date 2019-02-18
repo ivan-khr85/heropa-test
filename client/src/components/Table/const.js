@@ -15,7 +15,13 @@ export const getStatusesColors = R.cond([
 ]);
 
 export const types = {
-  DATE: Date,
+  DATE: 'Date',
   LABEL: 'Label',
-  STRING: String,
+  STRING: 'String',
+  NUMBER: 'Number',
+};
+
+export const iconsSize = {
+  addFilter: 'lg',
+  removeFilter: 'xs',
 };

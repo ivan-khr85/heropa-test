@@ -1,0 +1,11 @@
+@import "../../../../styles/colors.scss";
+
+.filter-item {
+  .btn,
+  .btn-secondary {
+    border: 1px solid $darkGrayNav1 !important;
+    padding: 4px 10px !important;
+    margin: 0 !important;
+    color: $darkGrayNav1;
+  }
+}

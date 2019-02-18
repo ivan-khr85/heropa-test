@@ -5,5 +5,7 @@ export default {
   table: {
     activeLabel: mainColor,
     disableLabel: '#ccc',
+    icons: '#a531a7',
+    inactiveIcon: '#666',
   },
 };

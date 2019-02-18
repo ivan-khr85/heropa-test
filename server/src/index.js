@@ -6,7 +6,7 @@ import './startup';
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  mocks: true,
+  // mocks: true,
 });
 
 server.listen().then(({ url }) => {

@@ -1,5 +1,7 @@
 import React from 'react';
-import { findColumnsByName, renderRowItem } from './helpers';
+import * as R from 'ramda';
+import formatDate from 'date-fns/format';
+import { findColumnsByName, renderRowItem, compareValues } from './helpers';
 
 export const renderHeader = columns => columns.map(({ name }) => <th key={name}>{name}</th>);
 
@@ -13,3 +15,46 @@ export const renderRow = (row, columns, key) => (
 );
 
 export const renderData = (data, columns) => data.map((row, index) => renderRow(row, columns, index));
+
+export const getFilters = R.compose(
+  R.uniq,
+  R.reduce((acc, { name }) => [...acc, { name }], []),
+  ({ columns }) => columns,
+);
+
+export const getSubFilters = ({ data, columns }, selectedColumn) => {
+  const { format } = R.find(R.propEq('name', selectedColumn))(columns);
+
+  return R.pipe(
+    R.reduce(
+      (acc, val) => R.append(
+        R.pipe(
+          R.find(R.propEq('column', selectedColumn)),
+          R.prop('value'),
+          value => ({ name: value, format }),
+        )(val),
+        acc,
+      ),
+      [],
+    ),
+    R.uniq,
+  )(data);
+};
+
+export const formatFilterValue = (name, format, isCol) => format && !isCol ? formatDate(name, format) : `${name}`;
+
+export const filterData = (data, filters, columns) => {
+  if (R.isEmpty(filters)) return data;
+  const filtersObject = filters.reduce(
+    (acc, { selectedColumn, selectedValue }) => ({ ...acc, [selectedColumn]: selectedValue }),
+    {},
+  );
+  const reducer = (acc, { name, type }) => ({ ...acc, [name]: type });
+  const columnTypes = columns.reduce(reducer, {});
+
+  return data.filter(rowArray => rowArray.reduce((acc, { column, value }) => {
+    const filterValue = filtersObject[column];
+
+    return filterValue ? acc || compareValues(filterValue, value, columnTypes[column]) : acc;
+  }, false));
+};
