@@ -1,17 +1,7 @@
-import React, { Component } from 'react';
-import T from 'prop-types';
+import React from 'react';
+
 import { TableComponent } from '../../components';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <TableComponent />;
-  }
-}
-
-Home.propTypes = {};
+const Home = () => (<TableComponent />);
 
 export default Home;

@@ -1,4 +1,4 @@
-@import "../../../styles/colors";
+@import "../../../../styles/colors";
 
 .app-avatar-container {
   width: 100%;
@@ -11,7 +11,7 @@
   }
 
   .user-name-dropdown {
-    margin-top: 20px;
+    padding-top: 10px;
 
     .btn-secondary.dropdown-toggle {
       background-color: inherit;
