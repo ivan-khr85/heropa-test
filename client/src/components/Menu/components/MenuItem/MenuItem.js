@@ -36,7 +36,7 @@ class MenuItem extends Component {
     const {
       state: { menuItemExpanded },
       toggleItemExpanded,
-    } = this.state;
+    } = this;
     const showSubItemsComponents = subItems.length && !collapsed;
 
     return (
