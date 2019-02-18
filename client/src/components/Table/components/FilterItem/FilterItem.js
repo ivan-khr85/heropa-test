@@ -35,11 +35,11 @@ class Filter extends React.Component {
       switchFilterState,
     } = this;
 
-    const filterTitle = isColumns ? selectedColumn : selectedValue;
+    const filterTitle = (isColumns ? selectedColumn : selectedValue) || defaultFilterTitle;
 
     return (
       <ButtonDropdown isOpen={isOpenedFilter} toggle={switchFilterState} className="filter-item">
-        <DropdownToggle caret>{formatFilterValue(filterTitle || defaultFilterTitle, titleFormat)}</DropdownToggle>
+        <DropdownToggle caret>{formatFilterValue(filterTitle, titleFormat, isColumns)}</DropdownToggle>
         {isCanSelect ? (
           <DropdownMenu>
             {getSubItems(data, selectedColumn).map(({ name, format }) => (

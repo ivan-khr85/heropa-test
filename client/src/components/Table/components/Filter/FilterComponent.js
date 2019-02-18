@@ -1,10 +1,8 @@
 import React from 'react';
-import * as R from 'ramda';
 import T from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Button, Collapse } from 'reactstrap';
-import isDateEqual from 'date-fns/is_equal';
 
 import FilterItem from '../FilterItem';
 
@@ -43,46 +41,6 @@ class Filter extends React.Component {
     });
   };
 
-  filterDataTable = () => {
-    const {
-      props: { columns, data },
-      state: { filters },
-    } = this;
-
-    console.log('columns ', columns);
-    console.log('data ', data);
-    console.log('filters ', filters);
-
-    // this function should be moved into utils
-
-    const compareValues = (first, second, type) => R.cond([
-      [R.equals('String'), () => R.equals(first, second)],
-      [R.equals('Number'), () => R.equals(Number(first), Number(second))],
-      [R.equals('Date'), () => isDateEqual(first, second)],
-      [R.T, R.F],
-    ])(type);
-
-    const filterData = (data, filters, columns) => {
-      const filtersObject = filters.reduce(
-        (acc, { selectedColumn, selectedValue }) => ({ ...acc, [selectedColumn]: selectedValue }),
-        {},
-      );
-      const columnTypes = columns.reduce((acc, { name, type }) => ({ ...acc, [name]: type }), {});
-
-      console.log(columnTypes);
-
-      return data.filter(rowArray => rowArray.reduce((accum, { column, value }) => {
-        const filterValue = filtersObject[column];
-
-        return filterValue
-          ? accum || compareValues(filterValue, value, columnTypes[column])
-          : accum;
-      }, false));
-    };
-
-    console.log(filterData(data, filters, columns));
-  };
-
   selectColumns = (value, index) => {
     const { filters } = this.state;
 
@@ -103,7 +61,7 @@ class Filter extends React.Component {
   selectValue = (value, index, format) => {
     const {
       state: { filters },
-      filterDataTable,
+      props: { filterDataTable },
     } = this;
 
     const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
@@ -117,7 +75,9 @@ class Filter extends React.Component {
         },
       ];
     };
-    this.setState({ filters: filters.reduce(reducer, []) }, filterDataTable);
+    const newFilters = filters.reduce(reducer, []);
+
+    this.setState({ filters: newFilters }, filterDataTable(newFilters));
   };
 
   render() {
@@ -181,6 +141,7 @@ class Filter extends React.Component {
 Filter.propTypes = {
   columns: T.array,
   data: T.array,
+  filterDataTable: T.func.isRequired,
 };
 
 Filter.defaultProps = {
