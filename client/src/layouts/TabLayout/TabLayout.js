@@ -3,7 +3,8 @@ import T from 'prop-types';
 import {
   Nav, NavItem, NavLink, TabContent, TabPane,
 } from 'reactstrap';
-import classnames from 'classnames';
+import classNames from 'classnames';
+import './tabLayout.scss';
 
 
 class TabLayout extends Component {
@@ -17,7 +18,7 @@ class TabLayout extends Component {
   renderTabs = (config, activeTabKey, setActiveTab) => config.map(({ key, name }) => (
     <NavItem key={key}>
       <NavLink
-        className={classnames({ active: activeTabKey === key })}
+        className={classNames({ active: activeTabKey === key })}
         onClick={() => setActiveTab(key)}
       >
         {name}
