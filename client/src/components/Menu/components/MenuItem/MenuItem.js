@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as R from 'ramda';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as icons from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
 
 import { Collapse } from 'reactstrap';
 import './menuItem.scss';
@@ -42,7 +43,7 @@ class MenuItem extends Component {
     return (
       <div>
         <div
-          className={`app-menu-item-container ${collapsed ? 'app-menu-item-container-collapsed' : ''} `}
+          className={classNames('app-menu-item-container', { 'app-menu-item-container-collapsed': collapsed })}
           role="button"
           tabIndex="0"
           onClick={() => showSubItemsComponents && toggleItemExpanded(!menuItemExpanded)}

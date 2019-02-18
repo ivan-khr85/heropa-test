@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
 import { Col } from 'reactstrap';
+import classNames from 'classnames';
 
 import { UserSection, MenuItem } from './components';
 import './menu.scss';
@@ -50,9 +51,9 @@ class Menu extends Component {
     const { collapsed } = this.props;
 
     return (
-      <Col className={`app-menu-container ${collapsed ? 'app-menu-container-collapsed' : ''}`}>
+      <Col className={classNames('app-menu-container', { 'app-menu-container-collapsed': collapsed })}>
         <UserSection userName="Firstname Lastname" collapsed={collapsed} />
-        <div className={`app-menu-items-container ${collapsed ? 'app-menu-items-container-collapsed' : ''}`}>
+        <div className={classNames('app-menu-items-container', { 'app-menu-items-container-collapsed': collapsed })}>
           {menuItemData.map(data => <MenuItem {...{ key: data.label, data, collapsed }} />)}
         </div>
       </Col>

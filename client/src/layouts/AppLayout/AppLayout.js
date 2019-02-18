@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
+import classNames from 'classnames';
 
 import Menu from '../../components/Menu';
 import Navbar from '../../components/Navbar';
@@ -31,7 +32,7 @@ class AppLayout extends Component {
       <Container fluid className="app-root-container">
         <Row className="app-root-layout">
           <Menu {...{ collapsed: menuCollapsed, collapseMenuScreenWidth, toggleMenu }} />
-          <Col className={`app-layout-container ${menuCollapsed ? 'app-layout-container-collapsed' : ''}`}>
+          <Col className={classNames('app-layout-container', { 'app-layout-container-collapsed': menuCollapsed })}>
             <Row>
               <Navbar {...{ menuCollapsed, toggleMenu }} />
             </Row>
