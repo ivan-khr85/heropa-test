@@ -1,63 +1,75 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
-import { Nav, NavItem, NavLink, TabContent, TabPane, Row, Col } from 'reactstrap';
+import {
+  Nav, NavItem, NavLink, TabContent, TabPane,
+} from 'reactstrap';
+import classnames from 'classnames';
 
 
 class TabLayout extends Component {
   constructor(props) {
     super(props);
+    this.state = { activeTabKey: 1 };
   }
 
+  setActiveTab = activeTabKey => this.setState({ activeTabKey });
+
+  renderTabs = (config, activeTabKey, setActiveTab) => config.map(({ key, name }) => (
+    <NavItem key={key}>
+      <NavLink
+        className={classnames({ active: activeTabKey === key })}
+        onClick={() => setActiveTab(key)}
+      >
+        {name}
+      </NavLink>
+    </NavItem>
+  ));
+
+  renderTabContent = config => config.map(({ key, component }) => (
+    <TabPane {...{ key, tabId: key }}>
+      {component}
+    </TabPane>
+  ));
+
   render() {
-    const { children } = this.props;
+    const {
+      state: { activeTabKey },
+      renderTabs,
+      setActiveTab,
+      renderTabContent,
+    } = this;
+
+    const tabLayoutConfig = [
+      {
+        name: 'Tab1',
+        key: 1,
+        component: (<h3>Tab 1 content</h3>),
+      },
+      {
+        name: 'Tab2',
+        key: 2,
+        component: (<h3>Tab 2 content</h3>),
+      },
+      {
+        name: 'Tab3',
+        key: 3,
+        component: (<h3>Tab 3 content</h3>),
+      },
+      {
+        name: 'Tab4',
+        key: 4,
+        component: (<h3>Tab 4 content</h3>),
+      },
+    ];
 
     return (
-      <div>
-        {/*<Nav tabs>*/}
-          {/*<NavItem>*/}
-            {/*<NavLink*/}
-              {/*className={classnames({ active: this.state.activeTab === '1' })}*/}
-              {/*onClick={() => { this.toggle('1'); }}*/}
-            {/*>*/}
-              {/*Tab1*/}
-            {/*</NavLink>*/}
-          {/*</NavItem>*/}
-          {/*<NavItem>*/}
-            {/*<NavLink*/}
-              {/*className={classnames({ active: this.state.activeTab === '2' })}*/}
-              {/*onClick={() => { this.toggle('2'); }}*/}
-            {/*>*/}
-              {/*Moar Tabs*/}
-            {/*</NavLink>*/}
-          {/*</NavItem>*/}
-        {/*</Nav>*/}
-        {/*<TabContent activeTab={this.state.activeTab}>*/}
-          {/*<TabPane tabId="1">*/}
-            {/*<Row>*/}
-              {/*<Col sm="12">*/}
-                {/*<h4>Tab 1 Contents</h4>*/}
-              {/*</Col>*/}
-            {/*</Row>*/}
-          {/*</TabPane>*/}
-          {/*<TabPane tabId="2">*/}
-            {/*<Row>*/}
-              {/*<Col sm="6">*/}
-                {/*<Card body>*/}
-                  {/*<CardTitle>Special Title Treatment</CardTitle>*/}
-                  {/*<CardText>With supporting text below as a natural lead-in to additional content.</CardText>*/}
-                  {/*<Button>Go somewhere</Button>*/}
-                {/*</Card>*/}
-              {/*</Col>*/}
-              {/*<Col sm="6">*/}
-                {/*<Card body>*/}
-                  {/*<CardTitle>Special Title Treatment</CardTitle>*/}
-                  {/*<CardText>With supporting text below as a natural lead-in to additional content.</CardText>*/}
-                  {/*<Button>Go somewhere</Button>*/}
-                {/*</Card>*/}
-              {/*</Col>*/}
-            {/*</Row>*/}
-          {/*</TabPane>*/}
-        {/*</TabContent>*/}
+      <div className="app-tab-layout-container">
+        <Nav tabs>
+          {renderTabs(tabLayoutConfig, activeTabKey, setActiveTab)}
+        </Nav>
+        <TabContent activeTab={activeTabKey}>
+          {renderTabContent(tabLayoutConfig)}
+        </TabContent>
       </div>
     );
   }
