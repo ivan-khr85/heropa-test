@@ -1,5 +1,15 @@
 import React from 'react';
 
-const CourseDetails = () => (<h3>CourseDetails page </h3>);
+import TabLayout from '../../layouts/TabLayout';
+
+const CourseDetails = () => {
+
+
+  return (
+    <TabLayout>
+      <h3>Tab layout content</h3>
+    </TabLayout>
+  );
+};
 
 export default CourseDetails;
