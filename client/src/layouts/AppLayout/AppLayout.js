@@ -37,9 +37,7 @@ class AppLayout extends Component {
               <Navbar {...{ menuCollapsed, toggleMenu }} />
             </Row>
 
-            <Row>
-              {children}
-            </Row>
+            <Row>{children}</Row>
           </Col>
         </Row>
       </Container>
