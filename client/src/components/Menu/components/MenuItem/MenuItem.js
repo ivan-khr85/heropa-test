@@ -94,7 +94,7 @@ class MenuItem extends Component {
       },
     } = this;
 
-    const menuItemLink = subItems && subItems.length === 0 && href ? href : false;
+    const menuItemLink = R.isNil(subItems) && href ? href : false;
     const menuItem = renderMenuItem({
       collapsed, iconKey, label, subItems,
     });
