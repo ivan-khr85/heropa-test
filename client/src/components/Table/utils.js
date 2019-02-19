@@ -58,3 +58,8 @@ export const filterData = (data, filters, columns) => {
     return filterValue ? acc || compareValues(filterValue, value, columnTypes[column]) : acc;
   }, false));
 };
+
+export const getItemsOnPage = (data, page, itemsPerPage) => {
+  const offset = (page - 1) * itemsPerPage;
+  return data.slice(offset, offset + itemsPerPage);
+};

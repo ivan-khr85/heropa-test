@@ -1,36 +1,56 @@
 import React from 'react';
 import T from 'prop-types';
+import * as R from 'ramda';
 import { Table, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCogs, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { renderHeader, renderData, filterData } from './utils';
+import { Filter } from './components';
+import PaginationComponent from '../Pagination';
+
+import {
+  renderHeader, renderData, filterData, getItemsOnPage,
+} from './utils';
 import './index.scss';
 import colors from '../../const/colors';
-import { iconsSize } from './const';
-import { Filter } from './components';
+import { iconsSize, defaultPageNumber } from './const';
 
 class TableComponent extends React.Component {
   constructor(props) {
     super(props);
-    const { data } = props;
+    const { data, itemsPerPage } = props;
 
     this.state = {
+      itemsPerPage,
+      itemsCount: R.length(data),
+      currentPage: defaultPageNumber,
       filteredData: data,
     };
   }
 
   filterDataTable = (filters = {}) => () => {
     const { columns, data } = this.props;
-    this.setState({ filteredData: filterData(data, filters, columns) });
+    const filteredData = filterData(data, filters, columns);
+    this.setState({
+      filteredData,
+      itemsCount: R.length(filteredData),
+    });
   };
+
+  onPageChange = pageNumber => this.setState({ currentPage: pageNumber });
 
   render() {
     const {
-      state: { filteredData },
-      props: { data, columns },
+      state: {
+        filteredData, currentPage, itemsPerPage, itemsCount,
+      },
+      props: { columns, data },
       filterDataTable,
+      onPageChange,
     } = this;
+
+    const preparedData = getItemsOnPage(filteredData, currentPage, itemsPerPage);
+
 
     return (
       <div className="table-component">
@@ -50,19 +70,29 @@ class TableComponent extends React.Component {
           <thead>
             <tr>{renderHeader(columns)}</tr>
           </thead>
-          <tbody>{renderData(filteredData, columns)}</tbody>
+          <tbody>{renderData(preparedData, columns)}</tbody>
         </Table>
+        <PaginationComponent
+          {...{
+            currentPage,
+            onPageChange,
+            itemsPerPage,
+            itemsCount,
+          }}
+        />
       </div>
     );
   }
 }
 
 TableComponent.propTypes = {
+  itemsPerPage: T.number,
   columns: T.array,
   data: T.array,
 };
 
 TableComponent.defaultProps = {
+  itemsPerPage: 4,
   columns: [],
   data: [],
 };

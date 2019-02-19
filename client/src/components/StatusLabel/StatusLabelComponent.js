@@ -5,14 +5,16 @@ import './index.scss';
 import colors from '../../const/colors';
 
 const StatusLabel = ({ labelColor, label }) => (
-  <div
-    style={{
-      backgroundColor: labelColor,
-    }}
-    className="status-label"
-  >
-    <p className="label">{label}</p>
-  </div>
+  <td className="status-label">
+    <p
+      style={{
+        backgroundColor: labelColor,
+      }}
+      className="label"
+    >
+      {label}
+    </p>
+  </td>
 );
 
 StatusLabel.propTypes = {

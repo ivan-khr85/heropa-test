@@ -2,12 +2,21 @@
 
 .table-component {
   width: 100%;
+  padding: 20px;
 
   .first-column {
     color: $primaryColor;
   }
+  .table {
+    thead {
+      th {
+        border-top: none;
+      }
+    }
+  }
   .filter {
     display: flex;
+    margin-bottom: 30px;
 
     .button-filter,
     .btn-secondary {
