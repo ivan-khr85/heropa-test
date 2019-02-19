@@ -7,8 +7,17 @@
   padding: 0;
   //transition: width 0.5s;
   background-color: $darkGrayNav2;
+
+  .app-menu-spinner-container {
+    padding: 100px;
+  }
+
   &.app-menu-container-collapsed {
     width: 70px;
+
+    .app-menu-spinner-container {
+      padding: 16px;
+    }
   }
 }
 
