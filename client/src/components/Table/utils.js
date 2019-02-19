@@ -60,6 +60,6 @@ export const filterData = (data, filters, columns) => {
 };
 
 export const getItemsOnPage = (data, page, itemsPerPage) => {
-  const skipCount = page * itemsPerPage - 1;
-  return data.slice(skipCount, skipCount + itemsPerPage);
+  const offset = (page - 1) * itemsPerPage;
+  return data.slice(offset, offset + itemsPerPage);
 };

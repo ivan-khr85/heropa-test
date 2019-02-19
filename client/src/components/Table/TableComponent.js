@@ -29,14 +29,12 @@ class TableComponent extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps = ({ data }) => ({ itemsCount: R.length(data) });
-
   filterDataTable = (filters = {}) => () => {
     const { columns, data } = this.props;
     const filteredData = filterData(data, filters, columns);
     this.setState({
       filteredData,
-      itemsCount: R.length(filterData),
+      itemsCount: R.length(filteredData),
     });
   };
 
@@ -53,6 +51,7 @@ class TableComponent extends React.Component {
     } = this;
 
     const preparedData = getItemsOnPage(filteredData, currentPage, itemsPerPage);
+
 
     return (
       <div className="table-component">
@@ -94,7 +93,7 @@ TableComponent.propTypes = {
 };
 
 TableComponent.defaultProps = {
-  itemsPerPage: 2,
+  itemsPerPage: 4,
   columns: [],
   data: [],
 };
