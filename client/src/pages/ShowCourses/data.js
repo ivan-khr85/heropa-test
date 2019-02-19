@@ -14,1439 +14,86 @@ export const data = [
   [
     {
       column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
+      value: 'Apiko',
     },
     {
       column: 'Location',
       value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 12,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 12,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'test',
-    },
-    {
-      column: 'Location',
-      value: 10202.182,
-    },
-    {
-      column: 'Created At',
-      value: new Date(),
-    },
-
-    {
-      column: 'Owner',
-      value: 'test',
-    },
-    {
-      column: 'VMs',
-      value: 10202.182,
-    },
-    {
-      column: 'Status',
-      value: statuses.ACTIVE,
-    },
-  ],
-  [
-    {
-      column: 'Name',
-      value: 'Available',
-    },
-    {
-      column: 'Location',
-      value: 12,
     },
     {
       column: 'Created At',
       value: new Date(2548332435634),
     },
-
     {
       column: 'Owner',
-      value: 'Available',
+      value: 'Salas',
     },
     {
       column: 'VMs',
-      value: 12,
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Jack Merison',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+    {
+      column: 'Owner',
+      value: 'Merison Jack',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
     },
     {
       column: 'Status',
       value: statuses.DISABLED,
     },
-
   ],
   [
     {
       column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
+    },
+
+    {
+      column: 'Owner',
       value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Apiko',
     },
     {
       column: 'Location',
@@ -1467,13 +114,13 @@ export const data = [
     },
     {
       column: 'Status',
-      value: statuses.DISABLED,
+      value: statuses.ACTIVE,
     },
   ],
   [
     {
       column: 'Name',
-      value: 'Jack',
+      value: 'Jack Merison',
     },
     {
       column: 'Location',
@@ -1486,11 +133,65 @@ export const data = [
 
     {
       column: 'Owner',
-      value: 'Merison',
+      value: 'Merison Jack',
     },
     {
       column: 'VMs',
       value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Apiko',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
     },
     {
       column: 'Status',
@@ -1500,7 +201,61 @@ export const data = [
   [
     {
       column: 'Name',
+      value: 'Jack Merison',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Merison Jack',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
+    },
+
+    {
+      column: 'Owner',
       value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Apiko',
     },
     {
       column: 'Location',
@@ -1509,6 +264,384 @@ export const data = [
     {
       column: 'Created At',
       value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Jack Merison',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Merison Jack',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Apiko',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Jack Merison',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Merison Jack',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Apiko',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Jack Merison',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Merison Jack',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Apiko',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Jack Merison',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Merison Jack',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Apiko',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Jack Merison',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Merison Jack',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'new Best name for tests',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(252435634),
     },
 
     {
