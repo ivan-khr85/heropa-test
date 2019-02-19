@@ -1,0 +1,31 @@
+@import '../../styles/colors';
+
+.app-menu-container {
+  width: 250px;
+  position: fixed;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0;
+  background-color: $darkGrayNav2;
+
+  .app-menu-spinner-container {
+    padding: 100px;
+  }
+
+  &.app-menu-container-collapsed {
+    width: 70px;
+
+    .app-menu-spinner-container {
+      padding: 16px;
+    }
+  }
+}
+
+.app-menu-items-container {
+  padding: 25px 0;
+
+  &.app-menu-items-container-collapsed {
+    padding: 0;
+  }
+}
+

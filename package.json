@@ -12,6 +12,9 @@
     "eslint-plugin-react": "^7.12.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "sh run.sh"
+  },
+  "dependencies": {
+    "reactstrap": "^7.1.0"
   }
 }

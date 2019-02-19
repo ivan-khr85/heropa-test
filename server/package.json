@@ -8,10 +8,8 @@
   },
   "dependencies": {
     "apollo-server": "^2.3.3",
-    "bcrypt": "^3.0.4",
     "dotenv": "^6.2.0",
     "graphql": "^14.1.1",
-    "mongoose": "^5.4.10",
     "ramda": "^0.26.1",
     "validator": "^10.11.0"
   },

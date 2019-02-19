@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+
+.table-component {
+  width: 100%;
+  padding: 20px;
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .app-pagination-component {
+      ul {
+        margin: 0;
+      }
+    }
+  }
+  .first-column {
+    color: $primaryColor;
+  }
+  .table {
+    thead {
+      th {
+        border-top: none;
+      }
+    }
+    .link-to-courses {
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($color: $darkGray, $alpha: .1)
+      }
+    }
+  }
+  .filter {
+    display: flex;
+    margin-bottom: 30px;
+
+    .button-filter,
+    .btn-secondary {
+      outline: none;
+      padding: 5px 12px;
+      border: none;
+      border-radius: 5px;
+      margin: 5px 5px;
+      background-color: transparent;
+      .btn {
+        padding: 0;
+      }
+      &:focus {
+        box-shadow: none !important;
+      }
+      &:active {
+        box-shadow: none !important;
+        border-color: transparent;
+        background-color: rgba($color: #ccc, $alpha: 0.4);
+      }
+    }
+  }
+}
