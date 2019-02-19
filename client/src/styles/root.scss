@@ -3,6 +3,11 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 * {
@@ -23,6 +28,6 @@ code {
   .app-layout-content {
     background-color: $white;
     min-height: 600px;
-    padding:15px;
+    padding: 15px;
   }
 }
