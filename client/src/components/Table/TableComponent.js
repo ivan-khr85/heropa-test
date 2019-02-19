@@ -11,7 +11,7 @@ import PaginationComponent from '../Pagination';
 import ItemsPerPageCountSelector from '../ItemsPerPageCountSelector';
 
 import {
-  renderHeader, renderData, filterData, getItemsOnPage,
+  renderHeader, renderData, filterData, getItemsOnPage, getPagesCount,
 } from './utils';
 import './index.scss';
 import colors from '../../const/colors';
@@ -34,13 +34,22 @@ class TableComponent extends React.Component {
   filterDataTable = (filters = {}) => () => {
     const { columns, data } = this.props;
     const filteredData = filterData(data, filters, columns);
-    this.setState({
-      filteredData,
-      itemsCount: R.length(filteredData),
-    });
+    this.setState(
+      {
+        filteredData,
+        itemsCount: R.length(filteredData),
+      },
+      this.checkIfValidPage,
+    );
   };
 
-  onItemsPerPageChange = itemsPerPage => this.setState({ itemsPerPage, currentPage: 1 });
+  checkIfValidPage = () => {
+    const { itemsCount, itemsPerPage, currentPage } = this.state;
+    const maxPages = getPagesCount(itemsCount, itemsPerPage);
+    if (currentPage > maxPages) this.setState({ currentPage: 1 });
+  };
+
+  onItemsPerPageChange = itemsPerPage => this.setState({ itemsPerPage }, this.checkIfValidPage);
 
   onPageChange = pageNumber => this.setState({ currentPage: pageNumber });
 

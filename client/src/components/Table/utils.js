@@ -43,6 +43,8 @@ export const getSubFilters = ({ data, columns }, selectedColumn) => {
   )(data);
 };
 
+export const getPagesCount = (itemsCount, itemsPerPage) => Math.ceil(itemsCount / itemsPerPage);
+
 export const formatFilterValue = (name, format, isCol) => format && !isCol ? formatDate(name, format) : `${name}`;
 
 const isEmptyString = str => R.is(String, str) && R.isEmpty(R.trim(str));
