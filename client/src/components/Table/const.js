@@ -25,3 +25,5 @@ export const iconsSize = {
   addFilter: 'lg',
   removeFilter: 'xs',
 };
+
+export const defaultPageNumber = 1;

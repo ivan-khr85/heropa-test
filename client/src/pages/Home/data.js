@@ -1,104 +1,3 @@
-export const data = [
-  [
-    {
-      column: 'A',
-      value: 'test',
-    },
-    {
-      column: 'B',
-      value: 12,
-    },
-    {
-      column: 'C',
-      value: new Date(),
-    },
-  ],
-  [
-    {
-      column: 'A',
-      value: 'test',
-    },
-    {
-      column: 'B',
-      value: 10202.182,
-    },
-    {
-      column: 'C',
-      value: new Date(),
-    },
-  ],
-  [
-    {
-      column: 'A',
-      value: 'Available',
-    },
-    {
-      column: 'B',
-      value: 12,
-    },
-    {
-      column: 'C',
-      value: new Date(2548332435634),
-    },
-  ],
-  [
-    {
-      column: 'A',
-      value: 'Salas',
-    },
-    {
-      column: 'B',
-      value: 10202.182,
-    },
-    {
-      column: 'C',
-      value: new Date(2548332435634),
-    },
-  ],
-  [
-    {
-      column: 'A',
-      value: 'Salas',
-    },
-    {
-      column: 'B',
-      value: 10202.182,
-    },
-    {
-      column: 'C',
-      value: new Date(2548332435634),
-    },
-  ],
-  [
-    {
-      column: 'A',
-      value: 'new values',
-    },
-    {
-      column: 'B',
-      value: 999999,
-    },
-    {
-      column: 'C',
-      value: new Date(254333332435634),
-    },
-  ],
-  [
-    {
-      column: 'A',
-      value: 'new values',
-    },
-    {
-      column: 'B',
-      value: 999999,
-    },
-    {
-      column: 'C',
-      value: new Date(254333332435634),
-    },
-  ],
-];
-
 export const types = {
   DATE: 'Date',
   LABEL: 'Label',
@@ -106,18 +5,202 @@ export const types = {
   NUMBER: 'Number',
 };
 
+export const statuses = {
+  ACTIVE: 'Active',
+  DISABLED: 'Disabled',
+};
+
+export const data = [
+  [
+    {
+      column: 'Name',
+      value: 'test',
+    },
+    {
+      column: 'Location',
+      value: 12,
+    },
+    {
+      column: 'Created At',
+      value: new Date(),
+    },
+
+    {
+      column: 'Owner',
+      value: 'test',
+    },
+    {
+      column: 'VMs',
+      value: 12,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'test',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(),
+    },
+
+    {
+      column: 'Owner',
+      value: 'test',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Available',
+    },
+    {
+      column: 'Location',
+      value: 12,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Available',
+    },
+    {
+      column: 'VMs',
+      value: 12,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Salas',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Jack',
+    },
+    {
+      column: 'Location',
+      value: 77017,
+    },
+    {
+      column: 'Created At',
+      value: new Date(25482435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Merison',
+    },
+    {
+      column: 'VMs',
+      value: 10202,
+    },
+    {
+      column: 'Status',
+      value: statuses.ACTIVE,
+    },
+  ],
+  [
+    {
+      column: 'Name',
+      value: 'Salas',
+    },
+    {
+      column: 'Location',
+      value: 10202.182,
+    },
+    {
+      column: 'Created At',
+      value: new Date(2548332435634),
+    },
+
+    {
+      column: 'Owner',
+      value: 'Salas',
+    },
+    {
+      column: 'VMs',
+      value: 10202.182,
+    },
+    {
+      column: 'Status',
+      value: statuses.DISABLED,
+    },
+  ],
+];
+
 export const columns = [
   {
-    name: 'A',
+    name: 'Name',
     type: types.STRING,
   },
   {
-    name: 'B',
+    name: 'Location',
     type: types.NUMBER,
   },
   {
-    name: 'C',
+    name: 'Created At',
     type: types.DATE,
     format: 'YYYY/MM/DD',
+  },
+
+  {
+    name: 'Owner',
+    type: types.STRING,
+  },
+  {
+    name: 'VMs',
+    type: types.NUMBER,
+  },
+  {
+    name: 'Status',
+    type: types.LABEL,
   },
 ];

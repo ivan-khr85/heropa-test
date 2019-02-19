@@ -1,6 +1,6 @@
 import R from 'ramda';
-import { menuTypes } from './Menu';
 import { rootTypes } from './root';
+import { menuTypes } from './Menu';
 
 export default R.flatten([
   rootTypes,
