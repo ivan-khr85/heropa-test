@@ -43,7 +43,11 @@ class MenuItem extends Component {
     return (
       <div>
         <div
-          className={classNames('app-menu-item-container', { 'app-menu-item-container-collapsed': collapsed })}
+          className={
+            classNames('app-menu-item-container', {
+              'app-menu-item-container-collapsed': collapsed,
+              'app-menu-item-expanded': menuItemExpanded && !collapsed,
+            })}
           role="button"
           tabIndex="0"
           onClick={() => showSubItemsComponents && toggleItemExpanded(!menuItemExpanded)}
