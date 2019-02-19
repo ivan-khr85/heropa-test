@@ -37,7 +37,7 @@ class TableComponent extends React.Component {
     });
   };
 
-  onPageChange = pageNumber => this.setState({ currentPage: pageNumber });
+  onItemsPerPageChange = itemsPerPage => this.setState({ itemsPerPage, currentPage: 1 });
 
   render() {
     const {
