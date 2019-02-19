@@ -1,0 +1,14 @@
+@import "../../styles/colors";
+
+.app-pagination-component {
+  .page-link {
+
+    color: $darkGray;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+  }
+}
