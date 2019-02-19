@@ -3,6 +3,7 @@
 .table-component {
   .filter-collapse {
     position: absolute;
+    z-index: 1000;
     background-color: $lightGray;
     border-radius: 5px;
     box-shadow: 0 0 6px rgba($color: $darkGrayNav1, $alpha: 0.3);
