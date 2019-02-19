@@ -4,6 +4,16 @@
   width: 100%;
   padding: 20px;
 
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .app-pagination-component {
+      ul {
+        margin: 0;
+      }
+    }
+  }
   .first-column {
     color: $primaryColor;
   }
@@ -11,6 +21,12 @@
     thead {
       th {
         border-top: none;
+      }
+    }
+    .link-to-courses {
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($color: $darkGray, $alpha: .1)
       }
     }
   }
