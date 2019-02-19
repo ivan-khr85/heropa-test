@@ -9,13 +9,13 @@ const ItemsPerPageCountSelector = ({
   currentPage,
   itemsCount,
   itemsPerPage,
-  onItemsPerPageChanged,
+  onItemsPerPageChange,
 }) => (
   <div className="app-items-count-selector">
     <Input
       value={itemsPerPage}
       type="select"
-      onChange={e => onItemsPerPageChanged(e.target.value)}
+      onChange={e => onItemsPerPageChange(e.target.value)}
     >
       {itemsCountList.map(value => <option key={value}>{value}</option>)}
     </Input>
@@ -35,7 +35,7 @@ ItemsPerPageCountSelector.propTypes = {
   itemsCount: T.number,
   itemsPerPage: T.number,
   currentPage: T.number,
-  onItemsPerPageChanged: T.func.isRequired,
+  onItemsPerPageChange: T.func.isRequired,
 };
 
 export default ItemsPerPageCountSelector;
