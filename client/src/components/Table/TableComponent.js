@@ -18,7 +18,6 @@ import { iconsSize, defaultPageNumber } from './const';
 class TableComponent extends React.Component {
   constructor(props) {
     super(props);
-
     const { data, itemsPerPage } = props;
 
     this.state = {
