@@ -24,9 +24,7 @@ class MenuItem extends Component {
     const { menuItemExpanded: nextMenuItemExpanded } = nextState;
     const { menuItemExpanded } = this.state;
 
-    return collapsed !== nextCollapsed
-      || menuItemExpanded !== nextMenuItemExpanded
-      || !R.equals(data, nextData);
+    return collapsed !== nextCollapsed || menuItemExpanded !== nextMenuItemExpanded || !R.equals(data, nextData);
   }
 
   toggleItemExpanded = menuItemExpanded => this.setState({ menuItemExpanded });
@@ -43,7 +41,11 @@ class MenuItem extends Component {
     return (
       <div>
         <div
-          className={classNames('app-menu-item-container', { 'app-menu-item-container-collapsed': collapsed })}
+          className={
+            classNames('app-menu-item-container', {
+              'app-menu-item-container-collapsed': collapsed,
+              'app-menu-item-expanded': menuItemExpanded && !collapsed,
+            })}
           role="button"
           tabIndex="0"
           onClick={() => showSubItemsComponents && toggleItemExpanded(!menuItemExpanded)}
@@ -53,55 +55,46 @@ class MenuItem extends Component {
             <FontAwesomeIcon icon={icons[iconKey]} />
           </div>
           <span className="app-menu-item-label">{label}</span>
-          { showSubItemsComponents
-            ? (
-              <div className="app-chevron-icon-container">
-                <FontAwesomeIcon icon={menuItemExpanded ? icons.faChevronUp : icons.faChevronDown} />
-              </div>
-            )
-            : null }
+          {showSubItemsComponents ? (
+            <div className="app-chevron-icon-container">
+              <FontAwesomeIcon icon={menuItemExpanded ? icons.faChevronUp : icons.faChevronDown} />
+            </div>
+          ) : null}
         </div>
-        { showSubItemsComponents
-          ? (
-            <Collapse isOpen={menuItemExpanded}>
-              <div className="app-submenus-container">
-                {subItems.map(({ label: subItemLabel, href }) => (
-                  <Link to={href} key={subItemLabel}>
-                    <span className="app-submenu-item">{subItemLabel}</span>
-                  </Link>
-                ))}
-              </div>
-            </Collapse>
-          )
-          : null
-        }
+        {showSubItemsComponents ? (
+          <Collapse isOpen={menuItemExpanded}>
+            <div className="app-submenus-container">
+              {subItems.map(({ label: subItemLabel, href }) => (
+                <Link to={href} key={subItemLabel}>
+                  <span className="app-submenu-item">{subItemLabel}</span>
+                </Link>
+              ))}
+            </div>
+          </Collapse>
+        ) : null}
       </div>
     );
   };
-
 
   render() {
     const {
       renderMenuItem,
       props: {
-        collapsed,
-        data: {
-          iconKey,
-          label,
-          href,
-          subItems,
+        collapsed, data: {
+          iconKey, label, href, subItems,
         } = {},
       },
     } = this;
 
-    const menuItemLink = subItems && subItems.length === 0 && href ? href : false;
+    const menuItemLink = R.isNil(subItems) && href ? href : false;
     const menuItem = renderMenuItem({
-      collapsed, iconKey, label, subItems,
+      collapsed,
+      iconKey,
+      label,
+      subItems,
     });
 
-    return (
-      menuItemLink ? <Link to={menuItemLink}>{menuItem}</Link> : menuItem
-    );
+    return menuItemLink ? <Link to={menuItemLink}>{menuItem}</Link> : menuItem;
   }
 }
 

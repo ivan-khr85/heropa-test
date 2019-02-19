@@ -2,9 +2,10 @@
 
 .app-root-layout {
   .app-layout-container {
+    display: flex;
+    flex-direction: column;
     background-color: $lightGray;
-    height: 100vh;
-
+    min-height: 100vh;
     margin-left: 250px;
     &.app-layout-container-collapsed {
       margin-left: 70px;

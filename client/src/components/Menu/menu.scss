@@ -2,10 +2,10 @@
 
 .app-menu-container {
   width: 250px;
-  position: absolute;
-  height: 100vh;
+  position: fixed;
+  min-height: 100vh;
+  height: 100%;
   padding: 0;
-  //transition: width 0.5s;
   background-color: $darkGrayNav2;
 
   .app-menu-spinner-container {

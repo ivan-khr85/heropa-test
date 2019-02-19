@@ -15,3 +15,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.app-layout-content-wrapper {
+  padding: 25px;
+  width: 100%;
+
+  .app-layout-content {
+    background-color: $white;
+    min-height: 600px;
+    padding:15px;
+  }
+}
