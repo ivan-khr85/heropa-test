@@ -1,8 +1,10 @@
 import React from 'react';
 
 export default () => (
-  <>
-    <h3>404</h3>
-    <h3>Oops! Page not found</h3>
-  </>
+  <div className="app-layout-content-wrapper">
+    <div className="app-layout-content">
+      <h2>404</h2>
+      <h4>Oops. Page not found!</h4>
+    </div>
+  </div>
 );

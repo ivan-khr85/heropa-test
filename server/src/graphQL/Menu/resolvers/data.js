@@ -1,5 +1,10 @@
 export const menuItems = [
   {
+    label: 'Home',
+    iconKey: 'faHome',
+    href: '/',
+  },
+  {
     label: 'Dashboards',
     iconKey: 'faThLarge',
     href: '/dashboard',

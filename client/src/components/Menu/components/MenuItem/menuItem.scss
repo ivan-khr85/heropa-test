@@ -8,7 +8,7 @@
   cursor: pointer;
   transition: 0.5s;
 
-  &:hover {
+  &:hover, &.app-menu-item-expanded {
     color: $white;
     background-color: $darkGrayNav1;
   }
@@ -17,7 +17,6 @@
     outline: none;
   }
 }
-
 
 .app-menu-item-container {
   .app-menu-tem-icon-container {
