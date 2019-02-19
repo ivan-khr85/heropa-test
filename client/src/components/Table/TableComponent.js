@@ -7,6 +7,7 @@ import { faBars, faCogs, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { Filter } from './components';
 import PaginationComponent from '../Pagination';
+import ItemsPerPageCountSelector from '../ItemsPerPageCountSelector';
 
 import {
   renderHeader, renderData, filterData, getItemsOnPage,
@@ -37,6 +38,8 @@ class TableComponent extends React.Component {
     });
   };
 
+  onItemsPerPageChange = itemsPerPage => this.setState({ itemsPerPage });
+
   onPageChange = pageNumber => this.setState({ currentPage: pageNumber });
 
   render() {
@@ -45,12 +48,12 @@ class TableComponent extends React.Component {
         filteredData, currentPage, itemsPerPage, itemsCount,
       },
       props: { columns, data },
+      onItemsPerPageChange,
       filterDataTable,
       onPageChange,
     } = this;
 
     const preparedData = getItemsOnPage(filteredData, currentPage, itemsPerPage);
-
 
     return (
       <div className="table-component">
@@ -72,14 +75,24 @@ class TableComponent extends React.Component {
           </thead>
           <tbody>{renderData(preparedData, columns)}</tbody>
         </Table>
-        <PaginationComponent
-          {...{
-            currentPage,
-            onPageChange,
-            itemsPerPage,
-            itemsCount,
-          }}
-        />
+        <div className="pagination">
+          <ItemsPerPageCountSelector
+            {...{
+              currentPage,
+              itemsCount,
+              itemsPerPage,
+              onItemsPerPageChange,
+            }}
+          />
+          <PaginationComponent
+            {...{
+              currentPage,
+              onPageChange,
+              itemsPerPage,
+              itemsCount,
+            }}
+          />
+        </div>
       </div>
     );
   }
