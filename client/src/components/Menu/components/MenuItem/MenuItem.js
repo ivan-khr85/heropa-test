@@ -38,7 +38,7 @@ class MenuItem extends Component {
       state: { menuItemExpanded },
       toggleItemExpanded,
     } = this;
-    const showSubItemsComponents = subItems.length && !collapsed;
+    const showSubItemsComponents = subItems && subItems.length && !collapsed;
 
     return (
       <div>
@@ -89,12 +89,12 @@ class MenuItem extends Component {
           iconKey,
           label,
           href,
-          subItems = [],
+          subItems,
         } = {},
       },
     } = this;
 
-    const menuItemLink = subItems.length === 0 && href ? href : false;
+    const menuItemLink = subItems && subItems.length === 0 && href ? href : false;
     const menuItem = renderMenuItem({
       collapsed, iconKey, label, subItems,
     });
