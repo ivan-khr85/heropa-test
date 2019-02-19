@@ -23,6 +23,12 @@
         border-top: none;
       }
     }
+    .link-to-courses {
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($color: $darkGray, $alpha: .1)
+      }
+    }
   }
   .filter {
     display: flex;

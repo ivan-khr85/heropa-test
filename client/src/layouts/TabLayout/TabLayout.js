@@ -24,7 +24,7 @@ class TabLayout extends Component {
     } else {
       const activeTabKey = R.pathOr(0, ['tabsConfig', '0', 'key'], props);
       Object.assign(state, { activeTabKey });
-      appendUrlQueryParam(history, ACTIVE_TAB, activeTabKey, true);
+      appendUrlQueryParam(history, ACTIVE_TAB, activeTabKey);
     }
 
     this.state = state;
