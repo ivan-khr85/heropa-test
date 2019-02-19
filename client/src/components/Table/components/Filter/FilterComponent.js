@@ -123,7 +123,6 @@ class Filter extends React.Component {
         </Button>
         <Collapse className="filter-collapse" isOpen={isOpenedFilters}>
           <div className="inner-collapse">
-            {console.log(filters)}
             {filters.map(({ selectedColumn, selectedValue, format }, index) => (
               <div
                 className="filter-item-container"
