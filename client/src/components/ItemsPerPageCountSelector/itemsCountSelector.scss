@@ -1,0 +1,16 @@
+@import "../../styles/colors";
+
+.app-items-count-selector {
+  padding: 15px;
+  display: inline-flex;
+  color: $darkGray;
+
+  select {
+    width: 75px;
+  }
+
+  .app-counter-label {
+    margin: 0 0 0 10px;
+    padding: 7px;
+  }
+}

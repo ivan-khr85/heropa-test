@@ -13,7 +13,6 @@ import { Filter } from './components';
 class TableComponent extends React.Component {
   constructor(props) {
     super(props);
-
     const { data } = props;
 
     this.state = {
