@@ -2,7 +2,7 @@ import React from 'react';
 import T from 'prop-types';
 import * as R from 'ramda';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAlt, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faFilter, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Button, Collapse } from 'reactstrap';
 
 import FilterItem from '../FilterItem';
@@ -22,6 +22,7 @@ class Filter extends React.Component {
       //   format: String || null,
       // },
     ],
+    selectedFilters: [],
   };
 
   switchFilterState = () => {
@@ -43,37 +44,42 @@ class Filter extends React.Component {
     });
   };
 
-  selectColumns = (value, index) => {
-    const { filters } = this.state;
+  selectColumns = (name, index) => {
+    const { filters, selectedFilters } = this.state;
 
-    const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
-      if (index !== idx) return [...acc, { selectedColumn, selectedValue }];
+    const reducer = (acc, { selectedColumn, selectedValue, format }, idx) => {
+      if (index !== idx) return [...acc, { selectedColumn, selectedValue, format }];
       return [
         ...acc,
         {
-          selectedColumn: value,
+          selectedColumn: name,
           selectedValue: null,
           format: null,
         },
       ];
     };
-    this.setState({ filters: filters.reduce(reducer, []) });
+    const newSelectedFilters = [...selectedFilters, { name }];
+
+    this.setState({
+      filters: filters.reduce(reducer, []),
+      selectedFilters: newSelectedFilters,
+    });
   };
 
-  selectValue = (value, index, format) => {
+  selectValue = (value, index, valueFormat) => {
     const {
       state: { filters },
       props: { filterDataTable },
     } = this;
 
-    const reducer = (acc, { selectedColumn, selectedValue }, idx) => {
-      if (index !== idx) return [...acc, { selectedColumn, selectedValue }];
+    const reducer = (acc, { selectedColumn, selectedValue, format }, idx) => {
+      if (index !== idx) return [...acc, { selectedColumn, selectedValue, format }];
       return [
         ...acc,
         {
           selectedColumn,
           selectedValue: value,
-          format,
+          format: valueFormat,
         },
       ];
     };
@@ -82,20 +88,27 @@ class Filter extends React.Component {
     this.setState({ filters: newFilters }, filterDataTable(newFilters));
   };
 
-  removeFilterItem = index => () => {
+  removeFilterItem = (index, name) => () => {
     const {
       props: { filterDataTable },
-      state: { filters },
+      state: { filters, selectedFilters },
     } = this;
     const newFilters = R.remove(index, 1, filters);
+    const newSelectedFilters = R.without([{ name }], selectedFilters);
 
-    this.setState({ filters: newFilters }, filterDataTable(newFilters));
+    this.setState(
+      {
+        filters: newFilters,
+        selectedFilters: newSelectedFilters,
+      },
+      filterDataTable(newFilters),
+    );
   };
 
   render() {
     const {
       props: { columns, data },
-      state: { isOpenedFilters, filters },
+      state: { isOpenedFilters, filters, selectedFilters },
       switchFilterState,
       removeFilterItem,
       selectColumns,
@@ -106,17 +119,18 @@ class Filter extends React.Component {
     return (
       <div>
         <Button className="button-filter" onClick={switchFilterState}>
-          <FontAwesomeIcon size={iconsSize.addFilter} icon={faFileAlt} color={colors.table.inactiveIcon} />
+          <FontAwesomeIcon size={iconsSize.addFilter} icon={faFilter} color={colors.table.inactiveIcon} />
         </Button>
         <Collapse className="filter-collapse" isOpen={isOpenedFilters}>
           <div className="inner-collapse">
+            {console.log(filters)}
             {filters.map(({ selectedColumn, selectedValue, format }, index) => (
               <div
                 className="filter-item-container"
                 // eslint-disable-next-line react/no-array-index-key
                 key={`${selectedColumn}-${selectedValue}-${index}`}
               >
-                <Button className="remove-filter-item" onClick={removeFilterItem(index)}>
+                <Button className="remove-filter-item" onClick={removeFilterItem(index, selectedColumn)}>
                   <FontAwesomeIcon
                     size={iconsSize.removeFilter}
                     icon={faTimes}
@@ -129,7 +143,7 @@ class Filter extends React.Component {
                   isCanSelect
                   index={index}
                   titleFormat={format}
-                  data={{ columns }}
+                  data={{ columns, selectedFilters }}
                   selectFunc={selectColumns}
                   getSubItems={getFilters}
                   selectedColumn={selectedColumn}
