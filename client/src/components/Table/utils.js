@@ -43,9 +43,18 @@ export const getSubFilters = ({ data, columns }, selectedColumn) => {
 
 export const formatFilterValue = (name, format, isCol) => format && !isCol ? formatDate(name, format) : `${name}`;
 
+const isEmptyString = str => R.is(String, str) && R.isEmpty(R.trim(str));
+
 export const filterData = (data, filters, columns) => {
-  if (R.isEmpty(filters)) return data;
-  const filtersObject = filters.reduce(
+  const preparedFilters = filters.reduce((acc, { selectedColumn, selectedValue, format }) => {
+    const isEmpty = isEmptyString(selectedColumn) || isEmptyString(selectedValue);
+    const isNil = R.isNil(selectedColumn) || R.isNil(selectedValue);
+    if (isEmpty || isNil) return acc;
+    return [...acc, { selectedColumn, selectedValue, format }];
+  }, []);
+  if (R.isEmpty(preparedFilters)) return data;
+
+  const filtersObject = preparedFilters.reduce(
     (acc, { selectedColumn, selectedValue }) => ({ ...acc, [selectedColumn]: selectedValue }),
     {},
   );
