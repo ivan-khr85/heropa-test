@@ -49,7 +49,7 @@ class TabLayout extends Component {
 
   setActiveTab = activeTabKey => this.setState({ activeTabKey }, () => {
     const { history } = this.props;
-    appendUrlQueryParam(history, ACTIVE_TAB, activeTabKey, true);
+    appendUrlQueryParam(history, ACTIVE_TAB, activeTabKey);
   });
 
   renderTabs = (config, activeTabKey, setActiveTab) => config.map(({ key, name }) => (
