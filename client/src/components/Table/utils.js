@@ -16,11 +16,11 @@ export const renderRow = (row, columns, key) => (
 
 export const renderData = (data, columns) => data.map((row, index) => renderRow(row, columns, index));
 
-export const getFilters = R.compose(
+export const getFilters = ({ selectedFilters, columns }) => R.compose(
+  R.without(selectedFilters),
   R.uniq,
   R.reduce((acc, { name }) => [...acc, { name }], []),
-  ({ columns }) => columns,
-);
+)(columns);
 
 export const getSubFilters = ({ data, columns }, selectedColumn) => {
   const { format } = R.find(R.propEq('name', selectedColumn))(columns);

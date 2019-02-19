@@ -2,7 +2,7 @@ import React from 'react';
 import T from 'prop-types';
 import { Table, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCogs, faFilter } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCogs, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { renderHeader, renderData, filterData } from './utils';
 import './index.scss';
@@ -42,10 +42,10 @@ class TableComponent extends React.Component {
           <Button className="button-filter">
             <FontAwesomeIcon size={iconsSize.addFilter} icon={faCogs} color={colors.table.inactiveIcon} />
           </Button>
-          <Button className="button-filter">
-            <FontAwesomeIcon size={iconsSize.addFilter} icon={faFilter} color={colors.table.inactiveIcon} />
-          </Button>
           <Filter columns={columns} data={data} filterDataTable={filterDataTable} />
+          <Button className="button-filter">
+            <FontAwesomeIcon size={iconsSize.addFilter} icon={faFileAlt} color={colors.table.inactiveIcon} />
+          </Button>
         </div>
         <Table responsive>
           <thead>
