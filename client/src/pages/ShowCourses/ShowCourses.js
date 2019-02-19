@@ -1,5 +1,15 @@
 import React from 'react';
 
-const ShowCourses = () => (<h3>Show courses page base</h3>);
+import { TableComponent } from '../../components';
+import { data, columns } from './data';
+
+const ShowCourses = () => (
+  <TableComponent
+    {...{
+      data,
+      columns,
+    }}
+  />
+);
 
 export default ShowCourses;
